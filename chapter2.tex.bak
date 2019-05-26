@@ -1,0 +1,219 @@
+\chapter{CƠ SỞ LÝ THUYẾT}
+\label{chapter2}
+Chương \ref{chapter2}, cung cấp các lý thuyết cơ sở sử dụng để hoàn thiện đồ án, gồm các kiến thức về công nghệ truyền thông không dây LoRa, chuẩn giao tiếp dựa trên công nghệ LoRaWAN và tìm hiểu về thiết bị giám sát các tham số môi trường nước tự động BKRES. Các công cụ lập trình sử dụng trong đề tài như STM32CubeMX, Keil C, HERCULES. Những kiến thức hay công cụ này là nền móng trong việc xây dựng hệ thống cần được trình bày có cấu trúc rõ ràng.
+\section{Giới thiệu khái quát về LoRa, LoRWAN}  
+\subsection{Khái niệm về LoRa}
+LoRa là một trong những công nghệ wireless trong các ứng dụng LPWAN (Low-Power Wide Area Network) tương tự như SigFox, NB-Fi, RPMA.\par
+LoRa (Long Range Radio)\cite{5} là một nền tảng công nghệ không dây có công suất thấp và phạm vi xa, sử dụng giải tần miễn phí (unlicensed radio spectrum), phổ tần này được sử dụng trong các công nghiệp, khoa học và y tế (ISM band). Mục đích của tạo ra công nghệ LoRa là nhằm loại bỏ repeater, giảm giá thành thiết bị, tăng cường thời gian hoạt động, tăng cường năng lực của mạng và hỗ trợ cho số lượng lớn các thiết bị. Nó là một lớp vật lý, được sử dụng cho giao tiếp với khoảng cách lớn. Để tiết kiệm năng lượng, hầu hết công nghệ không dây sử dụng kỹ thuật điều chế tần số chuyển phím (FSK – Frequency Shift Key).\par 
+LoRa (Long Range Radio)\cite{6} là một kỹ thuật điều chế dựa trên kỹ thuật Spread-Spectrum và biến thể của Chirp Spread Spectrum (CSS), được nghiên cứu và phát triển bởi Cycleo và được mua lại bởi công ty Semtech vào năm 2012. Công nghệ này giúp chúng ta có thể truyền dữ liệu với khoảng cách lên đến hàng km mà không cần các loại khuếch đại công suất và công nghệ. LoRa cung cấp một giải pháp tối ưu trong việc tạo ra đường truyền không dây an toàn, tiêu thụ năng lượng ít hơn và tiết kiệm năng lượng hơn so với công nghệ không dây khác. Mạng không dây sử dụng công nghệ LoRa sẽ cung cấp phạm vi phủ sóng rộng hơn so với mạng di động hiện có, là một phù hợp với thiết bị sử dụng pin.\par
+Do đó, công nghệ LoRa được ứng dụng rộng rãi trong các mạng cảm biến không dây (Wireless Sensor Networks – WSN) hay hơn nữa là trong các thiết bị IoT trong tương lai nhằm thu thập dữ liệu như sensor network trong đó các sensor Node có thể gửi các giá trị đo được về trung tâm cách xa hàng km và còn có thể hoạt động được trong thời gian.
+\subsection{Nguyên lý hoạt động của LoRa}
+LoRa\cite{6} sử dụng kỹ thuật điều chế Chirp Spread Spectrum(CSS), nguyên lý kĩ thuật điều chế CSS được hiểu như sau:\par
+Dữ liệu sẽ được chia nhỏ bằng các xung cao tần để tạo ra tín hiệu có dãy tần số cao hơn tần số của dữ liệu gốc (chipped); sau đó tín hiệu thu được sẽ tiếp tục được mã hóa theo các chuỗi chirp signal. Có 2 loại chirp signal là up-chirp có tần số tăng theo thời gian và down -chirp có tần số giảm theo thời gian và việc mã hóa theo nguyên tắc bit 1 cho up-chirp, bit 0 cho down-chirp trước khi truyền ra anten để truyền. Nguyên lý trên giúp giảm độ phức tạp và độ chính xác cần thiết của mạch thu để có thể giải mã, giải điều chế dữ liệu.\par
+\begin{center}
+    \begin{figure}[htp]
+    \begin{center}
+     \includegraphics[scale=.5]{/hinh1}
+    \end{center}
+    \caption{Nguyên lý điều chế tín hiệu LoRa.}
+    \label{refhinh1}
+    \end{figure}
+\end{center}
+
+Nhiều thiết bị LoRa có thể trao dổi dữ liệu trên nhiều kênh đồng thời do nhờ sử dụng chirp signal mà các tín hiệu LoRa có các chirp rate khác nhau để có thể hoạt động trong cùng một khu vực mà không gây nhiễu cho nhau.\par
+\begin{center}
+    \begin{figure}[htp]
+    \begin{center}
+     \includegraphics[scale=.5]{hinh/hinh2}
+    \end{center}
+    \caption{Thành phần một gói dữ liệu được truyền và nhận[8].}
+    \label{refhinh1}
+    \end{figure}
+\end{center}
+
+Một gói dữ liệu truyền đi gồm các thành phần:\par
+\begin{itemize}
+\item Preamble: là chuỗi bit để dò tìm tín hiệu của LoRa trong không gian,
+\item Header: chứa thông tin về kích thước của Playload và xem có Payload CRC hay không. Giá trị của Header cũng được check CRC kèm theo,
+\item Payload: dữ liệu ứng dụng truyền qua LoRa.
+\end{itemize}
+Một số thông số hoạt động của LoRa:
+\begin{itemize}
+\item Hệ số trải phổ - SF (Spreading Factor): với chipset SX1278 của SemTech thì SF có giá trị từ 6 đến 12,
+\item Băng thông – BW (Bandwidth): với chipset SX1278 của SemTech thì BW có giá trị 125 KHz, 250 KHz và 500 KHz,
+\item Tốc độ mã hóa – CR (Coding Rate): với chipset SX1278 của SemTech thì CR có 4 giá trị là 4/5, 4/6, 4/7 và 4/8.
+\end{itemize}
+\subsection{Mạng LoRaWAN}
+LoRaWAN\cite{7} là chuẩn giao tiếp dựa trên nền tảng công nghệ LoRa và được định nghĩa, phát triển bởi tổ chức LoRa Alliance.\par
+Một LoRaWAN Gateway bao phủ hơn 10Km và tương đối rẻ. Với những lợi ích của khoảng cách xa của LoRaWAN, mạng LoRaWAN bao phủ thành phố Amsterdam với chỉ 10 gateways và mất khoản 1200 dollar. Vì LoRaWAN đang được thiết kế như một cách mà nó dùng để tạo ra một mạng phủ rộng toàn quốc và giúp ta xây dựng các cơ sở hạ tầng quan trọng của Internet of Things, nên bảo mật là điểm đang lưu tâm. LoRA Alliance đã cố để tạo ra LoRaWAN rất an toàn bằng các thêm 3 lớp bảo mật khác nhau:\par 
+\begin{itemize}
+\item Network key riêng để đảm bảo độ bảo mật trên lớp network,
+\item Application key riêng để đảm bảo 2 đầu của của lớp ứng dụng,
+\item Key đặt biệt của thiết bị.
+\end{itemize}
+
+Mặc dù có những lựa cho khác cho LPWAN như Sigfox, LoRa này dựa trên LPWAN có vẻ đầy hứa hẹn và phổ biến hơn.
+\subsection{Cách thức hoạt động mạng LoRaWAN}
+Một mạng LoRaWAN\cite{7} là một loại mạng diện rộng công suất thấp (LPWAN – Low Power Wide Area Network) sử dụng giao thức LoRaWAN. Cấu trúc của một mạng LoRaWAN (hình 2.3) thường được đặt trong mô hình star-of-stars mà mô-đun gateway là cầu nối giữa các thiết bị đầu cuối và máy chủ mạng. Thông tin giữa máy chủ mạng và mô-đun gateway được gửi qua kết nối IP trong khi thiết bị đầu cuối dùng giao tiếp không dây single-hop đến một hoặc nhiều gateway.\par
+ 
+Hình 2.3: Kiến trúc mạng LoRaWAN[*]
+
+Giao thức LoRaWAN [3] là một giao thức truyền thông mạng không dây được phát triển bởi liên minh LoRa (LoRa Allience) để giải quyết những thách thức phải đối mặt trong việc truyền dữ liệu trong khoảng cách xa ở những thiết bị IoT. Nhờ vào kiến trúc hệ thống của LoRaWAN nên nó có khả năng truyền tin trong khoảng cách xa, tiêu tốn ít năng lượng với tốc độ truyền bit thấp. Giao thức LoRaWAN và kiến trúc mạng của nó có ảnh hưởng rất lớn đến tuổi thọ của pin, dung lượng mạng, chất lượng của mạng, bảo mật và một loạt các ứng dụng được phục vụ bởi mạng.\par
+ 
+Hình 2.4: Giao thức truyền thông LoRaWAN [6]
+
+Trong hình 2.3 miêu tả kiến trúc của giao thức LoRaWAN. Có thể quan sát được các mức độ mã hóa khác nhau, lớp vật lý (Physical Layer), lớp HAL (Hardware Abstraction Layer). Điều chế LoRa nằm ở lớp vật lý, lớp LoRaWAN và giao diện truyền thông được kết nối qua giao tiếp ngoại vi nối tiếp (SPI – Serial Peripheral Interface) và Backhaul IP Stack. 
+LoRaWAN gồm LoRa MAC (Class A, Class B, Class C) và chip LoRa hoạt động dựa trên lớp PHY.  Tùy và các khu vực các chip LoRa hoạt động ở các băng tần khác nhau như 430MHz (Châu Á), 915MHz (USA), 433MHz hoặc 868MHz (Châu Âu), …\par
+Theo tiêu chuẩn [5][6], có 3 loại khác nhau (A, B và C) trong một nút LoRa. Lớp A là lớp đơn giản nhất và đảm bảo tiêu thụ năng lượng tối thiểu nhưng bù lại nó bị hạn chế khả năng nhận tin nhắn. Tất cả các thiết bị LoRaWAN phải thực hiện tối thiểu được lớp A.
+\begin{itemize}
+\item Class A (Baseline): Khung truyền được chia thành uplink và downlink. Uplink bao gồm 1 khe thời gian, tiếp theo là 2 khe thời gian downlink. Thiết bị loại này chỉ có thể nhận dữ liệu từ máy chủ sau khi nó đã gửi dữ liệu, 
+\item Class B (Beacon): Thiết bị đầu cuối mở thêm một khe thời gian nhận trong thời gian downlink, cùng thêm hai khe thời gian được chỉ định trong loại A. Ngoài khả năng nhận dữ liệu như các thiết bị loại A, các thiết bị loại B cũng có thể sử dụng một loạt khe nhận được kích hoạt bởi các bản tin kiểu Beacon đươc gửi từ gateway,
+\item Class C (Continous): Các thiết bị loại này có thể nhận dữ liệu bất kể khi nào trừ lúc truyền dữ liệu.
+\end{itemize}
+\subsection{Đa truy nhập trong mạng không dây}
+Đa truy nhập (Multiple Access) là một kỹ thuật cho phép nhiều thiết bị đồng thời chia sẻ một lượng dải tần vô tuyến.\par
+	Trong truyền thông không dây, các thiết bị thường gửi bản tin đến trạm cơ sở (Base Station), do một trạm cơ sở thường nhận thông tin từ các thiết bị (trong một khoảng thời gian số lượng thiết bị có thể biến đổi từ một vài thiết bị đến hàng trăm thiết bị) nên việc kiểm soát truy nhập kênh truyền là không thể thiếu để tránh xung đột (collision) gây mất thông tin.\par
+Có 4 phương pháp điều khiển truy nhập kênh truyền:
+\begin{itemize}
+\item Đa truy nhập phân chia theo tần số (FDMA – Frequency Division Multiple Access): dải tần số sẽ được chia thành các dải tần số nhỏ không chồng lên nhau, và mỗi dải đó được sử dụng bởi một thiết bị khác nhau, 
+\item Đa truy nhập phân chia theo thời gian (TDMA – Time Division Multiple Access): mỗi thiết bị trong mạng sử dụng chung một dải tần nhưng chỉ được phép truyền trong một khoảng thời gian cụ thể,
+\item Đa truy nhập phân chia theo mã (CDMA – Code Division Multiple Access): các thiết bị trong mạng sẽ sử dụng chung một dải tần và có thể gửi bản tin cùng một thời gian nhưng những tín hiệu đó sẽ được mã hóa bằng các mã ngẫu nhiên khác nhau,
+\item Đa truy nhập phân chia theo không gian (SDMA – Space Division Multiple Access): các thiết bị trong mạng sẽ sử dụng chung một dải tần, truyền/nhận bản tin cùng một lúc và không sử dụng mã ngẫu nhiên để mã hóa. Tại trạm cơ sở, yêu cầu phải có một dãy ăng-ten lớn để khử nhiễu.
+Trong mạng không dây, tín hiệu được điều chế và truyền đi bởi một sóng mang. Do những tính chất đặc biệt của sóng vô tuyến nên ta cần có những giao thức riêng biệt để điều khiển truy nhập cho mạng không dây. Dưới đây là một số giao thức được sử dụng cho mạng không dây:
+\item Aloha: là mạng đầu tiên sử dụng phương pháp truy nhập ngẫu nhiêu. Nguyên tắc hoạt động của mạng này là khi một trạm có dữ liệu, nó gửi ngay lên đường truyền vô tuyến, điều này có nghĩa khi có nhiều hơn một trạm cùng truy nhập kênh truyền thì sẽ xảy ra hiện tượng mất gói. Nên hiệu năng của giao thức này thấp,
+\item Slotted Aloha: cũng giống như Aloha, tuy nhiên kênh truyền được chia thành các khe thời gian (slot time), mỗi khe thời gian có độ dài là ts. Các trạm chỉ được phép truy nhập kênh truyền tại thời điểm đầu của các khe,
+\item CSMA/CA (Carrier Senser Multiple Access with Collision Avoidance): trong giao thức này, trước khi truy nhập kênh truyền, thiết bị kiểm tra trạng thái kênh. Nếu kênh truyền bận thì sẽ đợi đến khi kênh truyền rỗi. Khi kênh truyền rỗi, tiếp tục đợi thêm một khoảng thời gian DIFS (DCF Inter-Frame Space) cho trước (DIFS = RTT). Đếm lùi (back-off) một số mini slot tBO ngẫu nhiên, sau mỗi mini slot tBO sẽ giảm đi 1. Nếu trong khoảng thời gian đếm lùi kênh truyền lại bận thì tạm dừng đếm lùi và bảo toàn giá trị tBO tại thời điểm dừng. Sau khi kênh truyền chuyển sang trạng thái rỗi một khoảng thời gian DIFS, trạm tiếp tục đếm lùi đến khi tBO = 0 thì truy cập kênh truyền và gửi gói. Do kênh truyền vô tuyến không tin cậy nên sau khi nhận được gói một khoảng thời gian SIFS (Service Inter-Frame Space), bên thu sẽ phát lại một bản tin ACK (có độ ưu tiên cao hơn gói dữ liệu).
+\end{itemize}
+\section{Giới thiệu thiết bị phần cứng }
+\subsection{Giới thiệu vi điều khiển STM32F103 của hãng ST}
+Vi điều khiển STM32F103 là vi điều khiển 32bit với lõi ARM Cortex-M3 trên kiến trúc RISC của hãng ST. Thuộc dòng hiệu năng cao, hoạt động ở tần số cao nhất là 72MHz, bộ nhớ flash lên tới 256KB, dung lương RAM lên tới 48KB. STM32F103 hỗ trợ đầy đủ các tính năng [7]:
+\begin{itemize}
+\item   Bộ chuyển đổi ADC 12-bit.
+\item   Tích hợp timer 16-bit với hai bộ điều khiển PWM.
+\item	Đầy đủ các kết nối thông dụng: I2C, SPI, I2S, CAN, USART.
+\item	Hỗ trợ các ngoại vi cao cấp như SDIO, USB.
+\item	Hỗ trợ giao tiếp với ngoại vi thông qua các kênh DMA.
+\item	Nạp chương trình thông qua 2 phương thức SWD và Bootloader.
+\item	Tích hợp cảm biến nhiệt ngay trong CPU với độ phân giải 1oC.
+\end{itemize}
+STM32F103 có thể hoạt động trong dải điện áp từ 2.0V – 3.6V, tích hợp bộ điều khiển tiết kiệm năng lượng cho phép sử dụng trong những ứng dụng tiêu thụ năng lượng thấp.
+
+
+Bảng 2.1 Bảng mô tả thông số họ vi điều khiển STM32F103xxx [7]
+ 
+
+ 
+Hình 2.6: Kiểu đóng gói vi điều khiển STM32F103 [*]
+ 
+Hình 2.7: Sơ đồ khối thiết kế dòng vi điều khiển STM32F103xC [7]
+ 
+Hình 2.8: Cấu hình chân của dòng MCU STM32F103RCT6 64 chân [7]
+ 
+Hình 2.9: Sơ đồ cấu hình xung clock cho MCU[7]
+\subsection{Module LoRa Ai Thinker SX1278 Ra-02}
+Module truyền thông LoRa SX1278 Ra-02 là 1 trong sô những module sử dụng công nghệ LoRa có giá thành rẻ,tiêu thụ điện năng thấp hơn đáng kể so với các thiết bị khác, sử dụng IC truyền thông LoRa SX1278 của Semtech.Dưới đây là thông số kĩ thuật và đặc điểm của Module LoRa Ai Thinker SX1278 Ra-02 [8]:
+\begin{itemize}
+\item Kích thước: 17 x 16mm.
+\item Chuẩn không dây có dải tần số: LoRaTM - 433MHz.
+\item Hỗ trợ chuẩn giao tiếp SPI.
+\item Điện áp hoạt động: 1.8V - 3.7V, mặc định 3.3V. 
+\item Công suất đầu ra RF ổn định khi điện áp đầu vào thay đổi 18 ± 1 dBm.
+\item Hỗ trợ công nghệ điều chế FSK, GFSK, MSK, GMSK, và LoRa.
+\item Phạm vi sóng RSSI: 127dB .
+\item Độ dài tối đa một gói tin 256 byte.
+\item Tốc độ bit có thể đạt đến 300kbps.
+\item Nhiệt độ làm việc: -40- 85 độ.
+\item Dòng tiêu thụ:
+
+Bảng 2.2: Dòng tiêu thụ của LoRa LoRa Ai Thinker SX1278 Ra-02
+
+Tần số hoạt động	TX	RX	Standby
+433MHz	93mA	12.15mA	1.6mA
+470MHz	97mA	12.15mA	1.5mA
+
+\end{itemize}
+Hình 2.10: Module LoRa Ai Thinker SX1278 Ra-02 thực tế
+ 
+Hình 2.11:  Sơ đồ chân module Module LoRa Ai Thinker SX1278 Ra-02 [*]
+\subsection{Thiết bị giám sát các tham số môi trường nước tự động BKRES}
+Hình vẽ dưới đây mô tả cấu trúc của cả hệ thống giám sát các tham số môi trường nước tự động BKRES bao gồm các máy trạm thu thập dữ liệu, gateway thu dữ liệu và kết nối, gửi dữ liệu đến một máy chủ để lưu trữ và quản lý số liệu.\par
+ 
+
+Hình 2.12: Mô hình hệ thống giám sát môi trường với mạng cảm biến
+Yêu cầu:
+\begin{enumerate}
+\item Đo đạc 7 thông số của nước.
+	\begin{itemize}
+\item Đo trực tiếp 4 thông số (Sử dụng cảm biến):
+ 	\begin{itemize}
+\item	Oxy
+\item   pH
+\item	Nhiệt độ
+\item	Độ mặn
+	\end{itemize}
+\item Nội suy 3 thông số (Tính toán từ các thông số đã đo được qua cảm biến):
+ 	\begin{itemize}
+	\item	NH3
+	\item	H2S
+	\item	NO2-
+ 	\end{itemize}
+\item Hiển thị tại chỗ. (Sử dụng LCD để hiển thị)
+	\begin{itemize}
+	\item Cảnh báo khi các thông số vượt ngưỡng(Sử dụng Còi, Đèn để cảnh báo).
+	\item Gửi dữ liệu về máy chủ qua mạng di động (Sử dụng module SIM.
+	\item Lưu dữ liệu cấu hình và nhật ký hệ thống (Sử dụng thẻ nhớ và bộ nhớ Flash).
+	\end{itemize}
+\item Chức năng:
+	\begin{itemize}
+	\item Đo đạc các thông số với chu kỳ thời gian cho trước.
+	\item Cảnh báo khi một hay nhiều thông số vượt ngưỡng đã định.
+	\item Lưu cấu hình vào bộ nhớ Flash để có thể phục hồi cấu hình khi bị mất điện.
+	\item Lưu trữ các thông số đo được vào thẻ nhớ ở dạng file text để dễ dàng đọc cũng như sử dụng.
+	\item Gửi dữ liệu về máy chủ, yêu cầu dữ liệu trên đường truyền phải được mã hóa AES.
+	\item Cho phép điều chỉnh các thông số cấu hình hệ thống qua SMS (có mật khẩu):
+		\begin{itemize}
+		\item Chu kỳ lấy dữ liệu, chu kỳ gửi dữ liệu về máy chủ, chu kỳ lưu trữ vào thẻ nhớ.
+		\item Cấu hình máy chủ gồm địa chỉ IP và Port.
+		\item Cập nhật giá trị ngưỡng trên và dưới các thông số. (Cho phép tự động cập nhật từ máy chủ).
+		\item Truy vấn thông tin hệ thống gồm các thông số cấu hình và tình trạng hệ thống.
+		\item Cập nhật và bảo trì hệ thống.
+		\end{itemize}
+	\end{itemize}
+\item Yêu cầu khoa học cần đạt:
+	\begin{itemize}
+	\item Module phần cứng hoạt động ổn định trong môi trường khắc nghiệt, dễ dàng mở rộng, nâng cấp khi cần.
+	\item Xử lý các dữ liệu từ cảm biến với tốc độ nhanh, tiêu tốn ít tài nguyên hệ thống nhất.
+	\item Đảm bảo các phép tính toán có sai số ít nhất.
+	\item Đảm bảo truyền thông tin cậy.
+	\item Kích thước nhỏ gọn, tiêu thụ năng lượng thấp.
+	\end{itemize}
+	\end{itemize}
+\end{enumerate}
+
+\section{Công cụ hỗ trợ}
+\subsection{Phần mềm hỗ trợ cấu trình vi điều khiển}
+Để cấu hình chức năng phần cứng cho các dòng vi điều khiển, ST đưa ra bộ công cụ STM32CubeMX. Phần mềm này hỗ trợ cấu hình các chức năng cho một vi điều khiển phục vụ cho một dự án mới một cách trực quan, nhanh chóng. Ngoài ra, STM32CubeMX tự động download các driver mới nhất của ST dành cho các dòng chip của mình. Vì vậy đảm bảo các API của hãng sẽ luôn được cập nhật. Công cụ này còn hỗ trợ tự động sinh project mới với tùy chọn các IDE thông dụng[4].\par
+ 
+Hình 2.13: Giao diện phần mềm STM32CubeMX hỗ trợ cấu hình
+ 
+Hình 2.14: STM32CubeMX hỗ trợ cấu hình chi tiết cho từng ngoại vi
+\subsection{Phần mềm lập trình và biên dịch firmware Keil C}	
+ 
+Hình 2.15: Giao diện phần mềm Keil C.\par
+KeilC uVision là công cụ chuyên dụng hỗ trợ phát triển phần mềm nhúng rất nổi tiếng, nó hỗ trợ hầu hết các thương hiệu chip trên thị trường, hỗ trợ các ngôn ngữ C/C++, Assembly. Keil C được coi là IDE (môi trường phát triển) khá toàn diện, bao gồm khả năng biên dịch với trình biên dịch thương mại được tối ưu hóa, hỗ trợ nạp code và gỡ lỗi chuyên nghiệp.
+
+\subsection{Phần mềm hỗ trợ debug} 
+Trong quá trình lập trình, không thể tránh khỏi những lỗi ngữa pháp và logic. Những lối ngữ pháp thường ít gặp nếu người lập trình đã am hiểu ngôn ngữ lập trình và nếu mắc phải cũng dễ dàng debug vì Keil C sẽ báo lỗi khi biên dịch code. Lỗi logic phức tạp hơn vì trình biên dịch không phát hiện được nó mà người lập trình cũng khó nhận biết. Vì vậy khi lập trình cần phải chia chương trình ra nhiều activity với những đoạn code debug để có thể khoanh vùng đoạn code lỗi và debug dễ dàng hơn. Để debug chúng em quyết định dùng tool HERCULES.
+ 
+Hình 2.16: Giao diện phần mềm HERCULES
+HERCULES là phần mềm hiển thị UART khá thân thiện với người dùng. Sử dụng nó hết sức đơn giản. Sau khi download không cần cài đặt mà chỉ cần click đúp mỗi khi chạy. Sau khi kết nối kit STM32F103RCT6 với máy tính qua CH340 hoặc PL2303 và bật phần mềm. Giao diện hiện lên như trên. Chuột phải vào biểu tượng máy tính trên màn hình, chọn Manager, vào mục Port and Com để xem cổng Com nào đang mở. Trên Tool Hercules chọn Com đó, set  baud rate va click open. Tín hiệu debug hiện qua cửa sổ giúp ta debug.	
+\subsection{Tool hiển thị dữ liệu nhận được ở GateWay}
+ 
+Hình 2.17: Tool hiển thị dữ liệu nhận được ở GateWay
+\section{Kết luận}	
+Từ những kiến thức thu thập được qua sách báo, tài liệu mà em đã tổng hợp lại ở trên. Sau khi tìm hiểu kỹ phần lý thuyết và đã xác định được hướng giải quyết cho đề tài, em tiến hành thực hiện bước thiết kế hệ thống phần cứng, xây dựng phần mềm sẽ trình bày ở chương 3.
+
+
+
+
+

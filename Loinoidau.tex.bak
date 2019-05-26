@@ -1,0 +1,10 @@
+\thispagestyle{plain}
+\addcontentsline{toc}{section}{Lời mở đầu}
+\begin{center}
+\textbf{LỜI MỞ ĐẦU} 
+\end{center}
+\vspace*{0.5cm}
+Thế giới đang bước vào cuộc cách mạng công nghiệp 4.0, là một cuộc cách mạng sản xuất mới gắn liền với những công nghệ như điện toán đám mây, in 3D, thực tế ảo, internet vạn vật,… Trong đó Internet Vạn Vật - IoT (Internet of Thing) là một kịch bản của thế giới, khi mà mỗi đồ vật đều có một định danh và con người có thể tương tác trực tiếp với chúng. Nền tảng để xây dựng và phát triển IoT chính là Internet, công nghệ vi cơ điện tử và công nghệ truyền thông không dây.\par
+Có rất nhiều công nghệ truyền thông không dây đã được đề xuất như mạng viễn thông, Bluetooth, WiFi, ZigBee,… nhưng chúng đều không đáp ứng được đầy đủ yêu cầu mà IoT đặt ra là truyền dữ liệu khoảng cách xa và tiết kiệm năng lượng. Do đó nhiều công nghệ truyền dữ liệu không dây khác được ra đời nhằm phục vụ cho IoT, trong đó có công nghệ LoRa.\par 
+Công nghệ LoRa là một công nghệ mới đang được phát triển nên cần có những kỹ sư trẻ, nhiệt huyết tìm hiểu để áp dụng vào thực tiễn đời sống. Trước yêu cầu đó, em quyết định chọn đề tài \textbf{“THIẾT KẾ MODULE TRUYỀN THÔNG LORA TÍCH HỢP VÀO THIẾT BỊ IOT(PHẦN CỨNG)”} nhằm xây dựng được một mạng lưới sử dụng công nghệ LoRa để thu thập những dữ liệu cần thiết phục vụ đời sống và đáp ứng được nhu cầu về năng lượng tiêu thụ, chi phí, truyền dữ liệu ở khoảng cách xa.
+

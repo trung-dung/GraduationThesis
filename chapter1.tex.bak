@@ -1,0 +1,31 @@
+\chapter{Đặt Vấn Đề}
+\label{chapter1}
+Trong chương \ref{chapter1}, em xin trình bày khái quát về đề tài, mục tiêu mà đề tài hướng đến cũng như các phương pháp được sử dụng để hoàn thành được đề tài.
+\section{Tổng quan về đề tài}
+Đề tài \textbf{“THIẾT KẾ MODULE TRUYỀN THÔNG LORA TÍCH HỢP VÀO THIẾT BỊ IOT (PHẦN CỨNG)”} là đề tài nghiên cứu và ứng dụng công nghệ LoRa vào thiết bị IoT.\par 
+Trong cuộc cách mạng công nghiệp 4.0, IoT là một trong các xu thế, nó không chỉ được áp dụng trong các mô hình sản xuất mà nó còn được áp dụng trong để phục vụ đời sống con người như xây dựng các Smart Home, Smart City; quản lý môi trường; quản lý các thiết bị cá nhân;v.v…\par
+LoRaWAN \cite{2} là giao thức lớp MAC thường được sử dụng trong hệ thống LoRa, là một trong số những công nghệ LPWan (Low-Powered Wide Area Network) tiêu thụ ít năng lượng. Ngoài ra LoRa còn có nhiều đối thủ như Sigfox và Ingenu.\par
+Công nghệ LoRa và LoRaWAN \cite{3} đã được xuất hiện rộng khắp ở nhiều quốc gia Châu Âu (dự án được triển khai trên toàn quốc hoặc các ứng dụng cụ thể và các dự án thí điểm được triển khai trên khu vực rộng). Ở các khu vực khác trên thế giới (từ châu Á – Thái Bình Dương đến châu Phi) công nghệ LoRa cũng bắt đầu được sử dụng và tại Mỹ, LoRaWAN dường như có tương lai rất tốt. Một số dự án được triển khai tại châu Âu như dự án KPN (Hà Lan), Proximus (Bỉ) đã triển khai mạng LoRa toàn quốc. Orange (Pháp) đã triển khai LoRa tại 18 khu đô thị trong quý đầu năm 2016 và kỳ vọng sẽ phủ sóng khắp cả nước trong thời gian sớm nhất và còn nhiều dự án khác được triển khai ở nhiêu khu vực trên thế giới.\par
+Ở một số nước, người ta đã bắt đầu áp dụng các công nghệ truyền thông không dây vào lĩnh vực giám sát môi trường, như ở Mỹ, Ấn Độ, Trung Quốc… Thông qua hệ thống giám sát không dây này, người nông dân có thể thu thập được các thông số đến quy trình sản xuất nông ngư nghiệp như nhiệt độ không khí, độ ẩm không khí, ánh sáng, độ ẩm đất, độ pH, độ mặn, độ hòa tan oxy trong nước... Các thông tin này được thu thập, lưu trữ và truyền tải không dây đến trạm quản lý để phân tích và xử lý, qua đó người sử dụng có thể điều khiển và đưa ra các quyết định phù hợp nhằm tăng cường sản xuất và nâng cao chất lượng cây trồng, vật nuôi \cite{4}.\par
+Để phát triển nguồn lực thủy sản một cách bền vững thì việc áp dụng công nghệ cao vào nuôi trồng thủy sản là rất cần thiết. Tại Việt Nam một số nơi đã và đang áp dụng các thiết bị có khả năng giám sát vào trong nuôi trồng thủy sản bước đầu cho những kết quả tích cực.\par
+Từ những lợi ích mạng cảm biến không dây đem lại, việc áp dụng công nghệ truyền thông LoRa vào giám sát môi trường nước là rất cần thiết.\par
+\section{Mục đích nghiên cứu của đề tài}
+Thiết kế, phát triển module truyền thông LoRa để thực hiện việc gửi và nhận dữ liệu diễn ra một cách nhanh chóng, độ mất gói và lỗi gói thấp, ít xảy ra va chạm, tiết kiệm năng lượng. Dựa trên mục tiêu trên, các yêu cầu sau đây cần phải được thực hiện:
+\begin{itemize}
+\item	Xây dựng được mạng hình sao truyền dữ liệu giữa các thiết bị IoT (BKRES) tích hợp module LoRa đến GateWay,
+\item	Xây dựng bản tin truyền và nhận có Protocol đã định sẵn,
+\item	Truyền nhận dữ liệu chính xác, ổn định,
+\item	Công suất truyền và đường truyền ổn định,
+\item   Tích hợp vào thiết bị IoT (BKRES).
+\end{itemize}
+\vspace*{1.5cm}
+\section{Các phương pháp sử dụng trong nghiên cứu và thiết kế}
+Các phương pháp mà em sử dụng gồm có:
+\begin{itemize}
+\item   Phương pháp tham khảo tài liệu: tham khảo tài liệu từ sách báo về điện tử, từ mạng internet, kế thừa và phát triển các kết quả nghiên cứu đã có,
+\item   Phương pháp thực hành và sửa lỗi: xây dựng thuật toán thành các phần sau đó thí nghiệm nhiều lần và tìm hiểu, thảo luận để đạt được kết quả tối ưu nhất,
+\item   Phương pháp quan sát, học hỏi: thảo luận cùng thầy và các bạn để đưa ra được hướng đi tốt nhất, đạt hiệu quả cao.
+\end{itemize}\par
+\section{Kết luận}
+Qua chương \ref{chapter1} này, em đã khái quát chung về hệ thống, mục đích của việc nghiên cứu và các phương pháp sử dụng trong nghiên cứu. Để trang bị những kiến thức cần thiết chuẩn bị cho việc chế tạo sản phẩm thì việc nghiên cứu về các thành phần cấu thành là việc bắt buộc phải làm, những thông tin đó em xin được trình bày trong chương \ref{chapter2}.
+

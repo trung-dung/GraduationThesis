@@ -1,0 +1,2902 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6670 64-bit) (preloaded format=pdflatex 2018.5.17)  6 JUN 2018 21:40
+entering extended mode
+**./Tongketdoan.tex
+(Tongketdoan.tex
+LaTeX2e <2018-04-01> patch level 4
+Babel <3.20> and hyphenation patterns for 76 language(s) loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \begin{center}
+                  
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--4
+[] 
+ []
+
+! Undefined control sequence.
+l.5 \Large
+          \changefontsizes{13 pt}{\textbf{TỔNG KẾT ĐỒ ÁN}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.5 \Large\changefontsizes
+                          {13 pt}{\textbf{TỔNG KẾT ĐỒ ÁN}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package inputenc Error: Unicode character Ổ (U+1ED4)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 ...izes{13 pt}{\textbf{TỔNG KẾT ĐỒ ÁN}
+                                                  }
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character Ế (U+1EBE)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 ...izes{13 pt}{\textbf{TỔNG KẾT ĐỒ ÁN}
+                                                  }
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Command \DJ unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 ...izes{13 pt}{\textbf{TỔNG KẾT ĐỒ ÁN}
+                                                  }
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode character Ồ (U+1ED2)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 ...izes{13 pt}{\textbf{TỔNG KẾT ĐỒ ÁN}
+                                                  }
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (26.04152pt too wide) in paragraph at lines 5--6
+ \OT1/cmr/bx/n/10 TNG 
+ []
+
+
+Overfull \hbox (17.0138pt too wide) in paragraph at lines 5--6
+ \OT1/cmr/bx/n/10 KT 
+ []
+
+
+Overfull \hbox (17.69435pt too wide) in paragraph at lines 5--6
+ []\OT1/cmr/bx/n/10 AN 
+ []
+
+Missing character: There is no S in font nullfont!
+
+! Package inputenc Error: Unicode character ả (U+1EA3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 Sả
+        n phẩm của đồ án \textbf{"Thiết kế, phát triển giao t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ẩ (U+1EA9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 Sản phẩ
+               m của đồ án \textbf{"Thiết kế, phát triển giao t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ủ (U+1EE7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 Sản phẩm củ
+                     a đồ án \textbf{"Thiết kế, phát triển giao t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no a in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 Sản phẩm của đ
+                         ồ án \textbf{"Thiết kế, phát triển giao t...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode character ồ (U+1ED3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 Sản phẩm của đồ
+                             án \textbf{"Thiết kế, phát triển giao t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+LaTeX Font Info:    Try loading font information for +cmr on input line 8.
+LaTeX Font Info:    No file cmr.fd. on input line 8.
+
+LaTeX Font Warning: Font shape `/cmr/m/n' undefined
+(Font)              using `/cmr/m/n' instead on input line 8.
+
+! Corrupted NFSS tables.
+wrong@fontshape ...message {Corrupted NFSS tables}
+                                                  error@fontshape else let f...
+l.8 Sản phẩm của đồ á
+                               n \textbf{"Thiết kế, phát triển giao t...
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+
+LaTeX Font Warning: Font shape `/cmr/m/n' undefined
+(Font)              using `OT1/cmr/m/n' instead on input line 8.
+
+Missing character: There is no n in font nullfont!
+
+! Package inputenc Error: Unicode character ế (U+1EBF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ế (U+1EBF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ể (U+1EC3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ứ (U+1EE9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Command \dj unavailable in encoding OT1.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode character ậ (U+1EAD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ợ (U+1EE3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ạ (U+1EA1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ờ (U+1EDD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ớ (U+1EDB)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�ng WSN giám sát môi trường nước"}
+                                                   chuẩn bị được th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+
+! Package inputenc Error: Unicode character ẩ (U+1EA9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... giám sát môi trường nước"} chuẩ
+                                                  n bị được thực ngh...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no b in font nullfont!
+
+! Package inputenc Error: Unicode character ị (U+1ECB)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... sát môi trường nước"} chuẩn bị
+                                                   được thực nghiệm ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�t môi trường nước"} chuẩn bị đ
+                                                  ược thực nghiệm tro...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... môi trường nước"} chuẩn bị đư
+                                                  ợc thực nghiệm trong...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ợ (U+1EE3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�i trường nước"} chuẩn bị đượ
+                                                  c thực nghiệm trong m�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ự (U+1EF1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ờng nước"} chuẩn bị được thự
+                                                  c nghiệm trong môi trư...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ệ (U+1EC7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ớc"} chuẩn bị được thực nghiệ
+                                                  m trong môi trường th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�� được thực nghiệm trong môi trư
+                                                  ờng thực tế. Nhờ �...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ờ (U+1EDD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...được thực nghiệm trong môi trườ
+                                                  ng thực tế. Nhờ đó...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ự (U+1EF1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... thực nghiệm trong môi trường thự
+                                                  c tế. Nhờ đó, thuậ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package inputenc Error: Unicode character ế (U+1EBF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...c nghiệm trong môi trường thực tế
+                                                  . Nhờ đó, thuật toá...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no . in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ờ (U+1EDD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...��m trong môi trường thực tế. Nhờ
+                                                   đó, thuật toán đa t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... trong môi trường thực tế. Nhờ đ
+                                                  ó, thuật toán đa truy...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+
+! Package inputenc Error: Unicode character ậ (U+1EAD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...i trường thực tế. Nhờ đó, thuậ
+                                                  t toán đa truy nhập c�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...g thực tế. Nhờ đó, thuật toán đ
+                                                  a truy nhập có thể ph...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no a in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ậ (U+1EAD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�. Nhờ đó, thuật toán đa truy nhậ
+                                                  p có thể phát hiện t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no p in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ể (U+1EC3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ó, thuật toán đa truy nhập có thể
+                                                   phát hiện thêm nhữn...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ệ (U+1EC7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...toán đa truy nhập có thể phát hiệ
+                                                  n thêm những hạn ch�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ữ (U+1EEF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...y nhập có thể phát hiện thêm nhữ
+                                                  ng hạn chế và sửa c...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ạ (U+1EA1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...p có thể phát hiện thêm những hạ
+                                                  n chế và sửa chữa, ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ế (U+1EBF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...hể phát hiện thêm những hạn chế
+                                                   và sửa chữa, cải t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no v in font nullfont!
+Missing character: There is no s in font nullfont!
+
+! Package inputenc Error: Unicode character ử (U+1EED)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...t hiện thêm những hạn chế và sử
+                                                  a chữa, cải thiện th...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ữ (U+1EEF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...n thêm những hạn chế và sửa chữ
+                                                  a, cải thiện thêm. Tr...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no a in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ả (U+1EA3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... những hạn chế và sửa chữa, cả
+                                                  i thiện thêm. Trong tư...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ệ (U+1EC7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... hạn chế và sửa chữa, cải thiệ
+                                                  n thêm. Trong tương lai...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ửa chữa, cải thiện thêm. Trong tư
+                                                  ơng lai, em tin sản ph�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ơ (U+1A1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�a chữa, cải thiện thêm. Trong tươ
+                                                  ng lai, em tin sản phầ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+
+! Package inputenc Error: Unicode character ả (U+1EA3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...iện thêm. Trong tương lai, em tin sả
+                                                  n phầm BKRES-LoRa sẽ c...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ầ (U+1EA7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...hêm. Trong tương lai, em tin sản phầ
+                                                  m BKRES-LoRa sẽ cải th...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no B in font nullfont!
+Missing character: There is no K in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no E in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no - in font nullfont!
+Missing character: There is no L in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no R in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no s in font nullfont!
+
+! Package inputenc Error: Unicode character ẽ (U+1EBD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ng lai, em tin sản phầm BKRES-LoRa sẽ
+                                                   cải thiện ngày một...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ả (U+1EA3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...i, em tin sản phầm BKRES-LoRa sẽ cả
+                                                  i thiện ngày một tố...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ệ (U+1EC7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...n sản phầm BKRES-LoRa sẽ cải thiệ
+                                                  n ngày một tốt hơn �...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no m in font nullfont!
+
+! Package inputenc Error: Unicode character ộ (U+1ED9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�m BKRES-LoRa sẽ cải thiện ngày mộ
+                                                  t tốt hơn để có th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no t in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package inputenc Error: Unicode character ố (U+1ED1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ES-LoRa sẽ cải thiện ngày một tố
+                                                  t hơn để có thể ngo...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ơ (U+1A1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...Ra sẽ cải thiện ngày một tốt hơ
+                                                  n để có thể ngoài p...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ẽ cải thiện ngày một tốt hơn đ
+                                                  ể có thể ngoài phụ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode character ể (U+1EC3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... cải thiện ngày một tốt hơn để
+                                                   có thể ngoài phục v...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ể (U+1EC3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ện ngày một tốt hơn để có thể
+                                                   ngoài phục vụ cho l�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ụ (U+1EE5)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...��t tốt hơn để có thể ngoài phụ
+                                                  c vụ cho lĩnh vực ngh...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no v in font nullfont!
+
+! Package inputenc Error: Unicode character ụ (U+1EE5)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...��t hơn để có thể ngoài phục vụ
+                                                   cho lĩnh vực nghiên c...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no v in font nullfont!
+
+! Package inputenc Error: Unicode character ự (U+1EF1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...có thể ngoài phục vụ cho lĩnh vự
+                                                  c nghiên cứu, nó có t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ứ (U+1EE9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�i phục vụ cho lĩnh vực nghiên cứ
+                                                  u, nó có thể trở th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no u in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ể (U+1EC3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ho lĩnh vực nghiên cứu, nó có thể
+                                                   trở thành một sản ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+
+! Package inputenc Error: Unicode character ở (U+1EDF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...nh vực nghiên cứu, nó có thể trở
+                                                   thành một sản phẩm...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no m in font nullfont!
+
+! Package inputenc Error: Unicode character ộ (U+1ED9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...iên cứu, nó có thể trở thành mộ
+                                                  t sản phẩm thương ma...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no t in font nullfont!
+Missing character: There is no s in font nullfont!
+
+! Package inputenc Error: Unicode character ả (U+1EA3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ứu, nó có thể trở thành một sả
+                                                  n phẩm thương mai. T�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ẩ (U+1EA9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ó có thể trở thành một sản phẩ
+                                                  m thương mai. Từ đó,...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... thể trở thành một sản phẩm thư
+                                                  ơng mai. Từ đó, hỗ ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ơ (U+1A1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...hể trở thành một sản phẩm thươ
+                                                  ng mai. Từ đó, hỗ tr...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no T in font nullfont!
+
+! Package inputenc Error: Unicode character ừ (U+1EEB)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...hành một sản phẩm thương mai. Từ
+                                                   đó, hỗ trợ con ngư...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...nh một sản phẩm thương mai. Từ đ
+                                                  ó, hỗ trợ con ngườ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no , in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ỗ (U+1ED7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... sản phẩm thương mai. Từ đó, hỗ
+                                                   trợ con người trong ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+
+! Package inputenc Error: Unicode character ợ (U+1EE3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... phẩm thương mai. Từ đó, hỗ trợ
+                                                   con người trong việc...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...hương mai. Từ đó, hỗ trợ con ngư
+                                                  ời trong việc giám s�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ờ (U+1EDD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...ơng mai. Từ đó, hỗ trợ con ngườ
+                                                  i trong việc giám sát ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ệ (U+1EC7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...� đó, hỗ trợ con người trong việ
+                                                  c giám sát các thông s...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no s in font nullfont!
+
+! Package inputenc Error: Unicode character ố (U+1ED1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�i trong việc giám sát các thông số
+                                                   môi trường nói chung...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...iệc giám sát các thông số môi trư
+                                                  ờng nói chung, cũng nh...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ờ (U+1EDD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�c giám sát các thông số môi trườ
+                                                  ng nói chung, cũng như ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... số môi trường nói chung, cũng như
+                                                   người nông dân trong...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ... môi trường nói chung, cũng như ngư
+                                                  ời nông dân trong quá...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ờ (U+1EDD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 ...�i trường nói chung, cũng như ngườ
+                                                  i nông dân trong quá tr...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no . in font nullfont!
+
+Overfull \hbox (10.00003pt too wide) in paragraph at lines 8--9
+    \/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (28.08319pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 "Thit
+ []
+
+
+Overfull \hbox (9.26384pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 k,
+ []
+
+
+Overfull \hbox (22.84013pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 phat
+ []
+
+
+Overfull \hbox (18.79158pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 trin
+ []
+
+
+Overfull \hbox (20.28459pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 giao
+ []
+
+
+Overfull \hbox (15.97214pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 thc
+ []
+
+
+Overfull \hbox (5.59023pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 a
+ []
+
+
+Overfull \hbox (21.66656pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 truy
+ []
+
+
+Overfull \hbox (19.16656pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 nhp
+ []
+
+
+Overfull \hbox (30.0762pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 LoRa,
+ []
+
+
+Overfull \hbox (18.84712pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 tch
+ []
+
+
+Overfull \hbox (12.77771pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 hp
+ []
+
+
+Overfull \hbox (17.4096pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 vao
+ []
+
+
+Overfull \hbox (21.7221pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 mng
+ []
+
+
+Overfull \hbox (27.27763pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 WSN
+ []
+
+
+Overfull \hbox (24.1179pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 giam
+ []
+
+
+Overfull \hbox (14.5985pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 sat
+ []
+
+
+Overfull \hbox (18.52768pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 m^oi
+ []
+
+
+Overfull \hbox (21.34712pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 trng
+ []
+
+
+Overfull \hbox (17.5277pt too wide) in paragraph at lines 8--9
+\OT1/cmr/bx/n/10 nc"
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^e
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^e
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ~
+ []
+
+
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^e
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 o
+ []
+
+
+Overfull \hbox (5.55557pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ~u
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^a
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 a
+ []
+
+
+Overfull \hbox (2.77779pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^o
+ []
+
+
+Overfull \hbox (5.00002pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 o
+ []
+
+
+Overfull \hbox (4.44444pt too wide) in paragraph at lines 8--9
+\/cmr/m/n/10 ^e 
+ []
+
+Missing character: There is no T in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ứ (U+1EE9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 Trong quá trình nghiên cứ
+                                   u, xây dựng và thiết kế sản ph�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no u in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no x in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no d in font nullfont!
+
+! Package inputenc Error: Unicode character ự (U+1EF1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 Trong quá trình nghiên cứu, xây dự
+                                               ng và thiết kế sản ph�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ế (U+1EBF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ình nghiên cứu, xây dựng và thiế
+                                                  t kế sản phẩm, em đ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no t in font nullfont!
+Missing character: There is no k in font nullfont!
+
+! Package inputenc Error: Unicode character ế (U+1EBF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ghiên cứu, xây dựng và thiết kế
+                                                   sản phẩm, em đã v�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no s in font nullfont!
+
+! Package inputenc Error: Unicode character ả (U+1EA3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...n cứu, xây dựng và thiết kế sả
+                                                  n phẩm, em đã vấp ph...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ẩ (U+1EA9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ..., xây dựng và thiết kế sản phẩ
+                                                  m, em đã vấp phải nh...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ựng và thiết kế sản phẩm, em đ
+                                                  ã vấp phải nhiều kh...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no v in font nullfont!
+
+! Package inputenc Error: Unicode character ấ (U+1EA5)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...à thiết kế sản phẩm, em đã vấ
+                                                  p phải nhiều khó khă...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no p in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ả (U+1EA3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...��t kế sản phẩm, em đã vấp phả
+                                                  i nhiều khó khăn. Như...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ề (U+1EC1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ... sản phẩm, em đã vấp phải nhiề
+                                                  u khó khăn. Nhưng nhờ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no u in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no N in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...đã vấp phải nhiều khó khăn. Như
+                                                  ng nhờ có sự hướng...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ờ (U+1EDD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�p phải nhiều khó khăn. Nhưng nhờ
+                                                   có sự hướng dẫn t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no s in font nullfont!
+
+! Package inputenc Error: Unicode character ự (U+1EF1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ... nhiều khó khăn. Nhưng nhờ có sự
+                                                   hướng dẫn tận tìn...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ều khó khăn. Nhưng nhờ có sự hư
+                                                  ớng dẫn tận tình c�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ớ (U+1EDB)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...u khó khăn. Nhưng nhờ có sự hướ
+                                                  ng dẫn tận tình của...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no d in font nullfont!
+
+! Package inputenc Error: Unicode character ẫ (U+1EAB)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...khăn. Nhưng nhờ có sự hướng dẫ
+                                                  n tận tình của TS. Tr...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package inputenc Error: Unicode character ậ (U+1EAD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ... Nhưng nhờ có sự hướng dẫn tậ
+                                                  n tình của TS. Trần Q...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ủ (U+1EE7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...� có sự hướng dẫn tận tình củ
+                                                  a TS. Trần Quang Vinh c�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no a in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no T in font nullfont!
+Missing character: There is no r in font nullfont!
+
+! Package inputenc Error: Unicode character ầ (U+1EA7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...hướng dẫn tận tình của TS. Trầ
+                                                  n Quang Vinh cũng như s�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no Q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no V in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�nh của TS. Trần Quang Vinh cũng như
+                                                   sự giúp đỡ của c�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no s in font nullfont!
+
+! Package inputenc Error: Unicode character ự (U+1EF1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ủa TS. Trần Quang Vinh cũng như sự
+                                                   giúp đỡ của các th...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...Trần Quang Vinh cũng như sự giúp đ
+                                                  ỡ của các thành viê...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode character ỡ (U+1EE1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...��n Quang Vinh cũng như sự giúp đỡ
+                                                   của các thành viên t...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ủ (U+1EE7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...uang Vinh cũng như sự giúp đỡ củ
+                                                  a các thành viên trong ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no a in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ứ (U+1EE9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ác thành viên trong phòng nghiên cứ
+                                                  u Sanslab đã giúp em ho...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no u in font nullfont!
+Missing character: There is no S in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no b in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...iên trong phòng nghiên cứu Sanslab đ
+                                                  ã giúp em hoàn thiện ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ệ (U+1EC7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...n cứu Sanslab đã giúp em hoàn thiệ
+                                                  n đồ án này. Qua đó...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...��u Sanslab đã giúp em hoàn thiện đ
+                                                  ồ án này. Qua đó, gi...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode character ồ (U+1ED3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ... Sanslab đã giúp em hoàn thiện đồ
+                                                   án này. Qua đó, giúp...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no y in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no Q in font nullfont!
+Missing character: There is no u in font nullfont!
+Missing character: There is no a in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�p em hoàn thiện đồ án này. Qua đ
+                                                  ó, giúp em củng cố t...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+Missing character: There is no , in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ủ (U+1EE7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�n đồ án này. Qua đó, giúp em củ
+                                                  ng cố thêm những ki�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ố (U+1ED1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...� án này. Qua đó, giúp em củng cố
+                                                   thêm những kiến th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ữ (U+1EEF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...Qua đó, giúp em củng cố thêm nhữ
+                                                  ng kiến thức về ph�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ế (U+1EBF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ..., giúp em củng cố thêm những kiế
+                                                  n thức về phần cứn...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ứ (U+1EE9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ... em củng cố thêm những kiến thứ
+                                                  c về phần cứng, lậ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no v in font nullfont!
+
+! Package inputenc Error: Unicode character ề (U+1EC1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...��ng cố thêm những kiến thức về
+                                                   phần cứng, lập trì...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no p in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ầ (U+1EA7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ố thêm những kiến thức về phầ
+                                                  n cứng, lập trình; nh...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ứ (U+1EE9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...êm những kiến thức về phần cứ
+                                                  ng, lập trình; những ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no l in font nullfont!
+
+! Package inputenc Error: Unicode character ậ (U+1EAD)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�ng kiến thức về phần cứng, lậ
+                                                  p trình; những kỹ nă...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ữ (U+1EEF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�c về phần cứng, lập trình; nhữ
+                                                  ng kỹ năng làm việc ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no k in font nullfont!
+
+! Package inputenc Error: Unicode character ỹ (U+1EF9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ... phần cứng, lập trình; những kỹ
+                                                   năng làm việc nhóm, ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ệ (U+1EC7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ập trình; những kỹ năng làm việ
+                                                  c nhóm, tìm hiểu nghi�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ể (U+1EC3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...g kỹ năng làm việc nhóm, tìm hiể
+                                                  u nghiên cứu những v�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no c in font nullfont!
+
+! Package inputenc Error: Unicode character ứ (U+1EE9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...àm việc nhóm, tìm hiểu nghiên cứ
+                                                  u những vấn đề mớ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no u in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ữ (U+1EEF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...��c nhóm, tìm hiểu nghiên cứu nhữ
+                                                  ng vấn đề mới; cũn...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no v in font nullfont!
+
+! Package inputenc Error: Unicode character ấ (U+1EA5)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�m, tìm hiểu nghiên cứu những vấ
+                                                  n đề mới; cũng như ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...tìm hiểu nghiên cứu những vấn đ
+                                                  ề mới; cũng như có ...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode character ề (U+1EC1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...m hiểu nghiên cứu những vấn đề
+                                                   mới; cũng như có đ�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no m in font nullfont!
+
+! Package inputenc Error: Unicode character ớ (U+1EDB)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...��u nghiên cứu những vấn đề mớ
+                                                  i; cũng như có được...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ứu những vấn đề mới; cũng như
+                                                   có được những ki�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+
+! LaTeX Error: Command \dj unavailable in encoding .
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ững vấn đề mới; cũng như có đ
+                                                  ược những kiến th�...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! Package inputenc Error: Unicode character ư (U+1B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�ng vấn đề mới; cũng như có đư
+                                                  ợc những kiến thức...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ợ (U+1EE3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ... vấn đề mới; cũng như có đượ
+                                                  c những kiến thức m�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ữ (U+1EEF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...đề mới; cũng như có được nhữ
+                                                  ng kiến thức mới và...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no k in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ế (U+1EBF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...��i; cũng như có được những kiế
+                                                  n thức mới và trải ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no n in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ứ (U+1EE9)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�ng như có được những kiến thứ
+                                                  c mới và trải nghiệ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+
+! Package inputenc Error: Unicode character ớ (U+1EDB)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ư có được những kiến thức mớ
+                                                  i và trải nghiệm th�...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no v in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no r in font nullfont!
+
+! Package inputenc Error: Unicode character ả (U+1EA3)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ợc những kiến thức mới và trả
+                                                  i nghiệm thực tế.
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no i in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no i in font nullfont!
+
+! Package inputenc Error: Unicode character ệ (U+1EC7)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...�ng kiến thức mới và trải nghiệ
+                                                  m thực tế.
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no m in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+
+! Package inputenc Error: Unicode character ự (U+1EF1)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...��n thức mới và trải nghiệm thự
+                                                  c tế.
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no c in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package inputenc Error: Unicode character ế (U+1EBF)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 ...ức mới và trải nghiệm thực tế
+                                                  .
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+Missing character: There is no . in font nullfont!
+)
+! Emergency stop.
+<*> ./Tongketdoan.tex
+                     
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 71 strings out of 492972
+ 576 string characters out of 3126578
+ 59325 words of memory out of 3000000
+ 4038 multiletter control sequences out of 15000+200000
+ 3948 words of font info for 15 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 16i,1n,16p,806b,122s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

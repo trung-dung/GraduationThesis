@@ -1,0 +1,49 @@
+\chapter{KIẾN TRÚC HỆ THỐNG}
+\label{chapter3}
+Từ những cơ sở lý thuyết thu thập ở chương 2, chương này em sẽ trình bày những yêu cầu, kiến trúc tổng quan của hệ thống và bước giải quyết bài toán mà đề tài đưa ra.
+\section{Phân tích yêu cầu}
+Từ yêu cầu của đề tài, đi vào phân tích chi tiết yêu cầu, thiết bị cần phải đáp ứng các chức năng sau:
+\subsection{ Yêu cầu chức năng}
+\begin{itemize}
+\item	Xây dựng thiết bị BKRES thành các Notes.
+\item	Xây dựng thiết bị Gateway để nhận dữ liệu từ các Notes (BKRES).
+\item	Các nút truyền dữ liệu đến được Gateway.
+\item	Mạng có linh động về số lượng nút.
+\item 	Số lượng nút trong mạng từ 3 nút trở lên.
+\end{itemize}
+\subsection{Yêu cầu phi chức năng}  
+\begin{itemize}
+\item 	Các nút truyền dữ liệu chính xác, ít xảy ra va chạm.
+\item 	Nút sử dụng tiết kiệm năng lượng.
+\item	Nút mới có thể tự động tham gia mạng.
+\item	Thiết bị hoạt động ổn định.
+\item	Hình thức đẹp, phù hợp điều kiện làm việc.
+\item	Dữ liệu được đảm bảo an toàn.
+\item	Chi phí hợp lý
+\end{itemize}
+\section{Thiết kế tổng quan thiết bị}    
+  \subsection{Thiết kế thiết bị Gateway} 
+Hình 3.1: Sơ đồ các khổi trong một Gateway
+Sơ đồ khối trên mô tả một cách khái quát về mối liên kết giữa các thành phần của hệ thống, chúng được tách ra làm 3 phần riêng biệt:
+\begin{itemize}
+\item	Phần cung cấp năng lượng cho thiết bị: làm nhiệm vụ cung cấp năng lượng, đảm bảo cho hệ thống hoạt động ổn định, giảm thiểu những ảnh hưởng đến từ nguồn nuôi bên ngoài làm hỏng thiết bị.
+\item	Phần xử lý trung tâm: khối vi xử lý trung tâm thực hiện chức năng điều khiển module truyền thông LoRa hoạt động thông qua giao tiếp SPI, đưa dữ liệu nhận được từ module LoRa vào trong máy tính qua cổng USB.
+\item	Phần truyền dữ liệu: bao gồm module LoRa và ăng ten qua điều khiển của vi xử lý nhận nhiệm vụ truyền nhận dữ liệu từ thiết bị có tích hợp LoRa.
+Từ các thông tin có trên sơ đồ khối của thiết bị, em có thể đưa ra các phương án cụ thể để thiết kế, chế tạo thiết bị thực hiện đúng những yêu cầu.
+\end{itemize}
+  \subsection{Thiết kế thiết bị BKRES tích hợp Module LoRa} 
+Hình 3.2 Sơ đồ các khối trong một thiết bị client
+Sơ đồ khối trên mô tả một cách khái quát về mối liên kết giữa các thành phần của hệ thống, chúng được tách ra làm 4 phần riêng biệt:
+\begin{itemize}
+\item	Phần chi phối toàn bộ hệ thống: Khối nguồn, khối xử lý trung tâm. Làm nhiệm vụ cung cấp năng lượng, điều phối các hoạt động nhằm đảm bảo cho hệ thống hoạt động đúng yêu cầu chức năng. Các khối khác đều lệ thuộc 2 khối này.
+\item	Phần đầu vào: Khối cảm biến. Thực hiện chắc năng cung cấp dữ liệu từ cảm biến đưa vào cho khối xử lý trung tâm, làm điều kiện cho khối xử lý đưa ra các hoạt động điều khiển.
+\item	Phần đầu ra: Khối truyền thông, Khối cảnh báo, Khối hiển thị. Làm nhiệm vụ truyền dữ liệu về máy chủ, cũng như đưa ra các tín hiệu điều khiển cho các phần ngoại vi thực hiện.
+\item	Phần lưu trữ: Khối lưu trữ. Làm nhiệm vụ lưu trữ dữ liệu cho cả hệ thống.
+\end{itemize}
+Từ các thông tin có trên sơ đồ hệ thống, có thể đưa ra các phương án thiết kế cụ thể với mục đích xây dựng đầy đủ các tính năng, đảm bảo luồng dữ liệu được quản lý chặt chẽ.
+
+
+
+
+
+

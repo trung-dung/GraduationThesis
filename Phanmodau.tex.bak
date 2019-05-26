@@ -1,0 +1,39 @@
+\thispagestyle{plain}
+\begin{center}
+\textbf{PHẦN MỞ ĐẦU} 
+\end{center}
+\vspace*{1cm}
+\texttt{“Chúng ta đang tiến tới một cuộc cách mạng công nghệ, công nghiệp làm thay đổi cơ bản lối sống, phong cách làm việc và cách thức giao tiếp. Xét về phạm vi, mức độ và tính phức tạp, sự dịch chuyển này không giống với bất kỳ điều gì mà con người từng trải qua”}. Đó là khẳng định của GS. Klaus Schwab, người Đức, Chủ tịch Diễn đàn Kinh tế Thế giới Davos, người đã đưa ra khái niệm Cuộc cách mạng công nghiệp (CMCN) lần thứ 4 và đó cũng là chủ đề chính của diễn đàn kinh tế lớn nhất thế giới năm 2016. Thật vậy, cuộc sống của con người ngày càng được hỗ trợ nhiều măt bằng các giải pháp công nghệ cùng với các thiết bị phụ trợ. IoT là một trong số đó, khi mà mọi đồ vật được cấp một định danh trong một mạng ảo nơi mà chúng có thể trao đổi thông tin, dữ liệu mà không cần thông qua con người.\par 
+IoT trở thành xu hướng công nghệ là nhờ vào sự phát triển cửa công nghệ không dây, điện tử và Internet. Phạm vi thực hiện của đề tài tập trung vào thiết kế module truyền thông LoRa tích hợp với thiết bị IOT. Tuy nhiên, ý tưởng của đề tài còn là thiết kế phần cứng cho các thiết bị cần ứng dụng module LoRa trong truyền dữ liệu không dây. Qua đó, đề tài đã được hoàn thành với các mục tiêu được đề ra như sau:
+CHƯƠNG 1: ĐẶT VẤN ĐỀ 
+\begin{itemize}
+\item	Tổng quan đề tài.
+\item	Mục tiêu của nghiên cứu.
+\item	Kết quả dự kiến đạt được.
+\item	Các phương pháp sử dụng trong nghiên cứu và thiết kế.
+\end{itemize}
+CHƯƠNG 2: CƠ SỞ LÝ THUYẾT.
+Các vấn đề lý thuyết:
+\begin{itemize}
+\item	Công nghệ LoRa.
+\item	Module LoRa Ai thinker SX1278.
+\item	Mạng LoRaWAN.
+\item	Thiết bị giám sát các tham số môi trường nước tự động (BKRES).
+\item	Vi điều khiển 32 bit ARM Cortex – M3 của hãng STMicroelectronics.
+\item	Các phần mềm hỗ trợ lập trình và phát triển ứng dụng trên vi điều khiển 32 bit ARM Cortex – M3 (Phần mềm cấu hình STM32CubeMX, chương trình IDE - biên dịch: Keil C, Coocox, IAR,…).
+\end{itemize}
+CHƯƠNG 3: KIẾN TRÚC HỆ THỐNG
+\begin{itemize}
+\item	Phân tích yêu cầu và đưa ra giải pháp thiết kế.
+\item	Lựa chọn công nghệ.
+\end{itemize}
+CHƯƠNG 4: TRÌNH BÀY KẾT QUẢ ĐẠT ĐƯỢC
+\begin{itemize}
+\item	Hướng phát triển đề tài
+\item	Kế hoạch
+\end{itemize}
+
+
+
+
+

@@ -1,0 +1,150 @@
+\documentclass[12 pt,a4paper]{report}
+\usepackage[utf8]{vietnam}
+\usepackage{ucs}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{xr}
+\usepackage{microtype}
+\usepackage{sectsty}
+%\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[left=3.5 cm,right=2 cm,top=2.54 cm,bottom=2.54 cm]{geometry}
+%bia
+
+%het bia
+\setlength{\parskip}{0.5 em} % dan cach giua cac doan van
+%\input setbmp
+\usepackage[unicode]{hyperref} % tu dong tao bookmark
+\usepackage{tocloft,calc}
+\chapternumberfont{\changefontsizes{20pt}}
+\chaptertitlefont{\changefontsizes{30pt}}
+\renewcommand{\cftchappresnum}{Chương }
+\AtBeginDocument{\addtolength\cftchapnumwidth{\widthof{\bfseries {Chương } }}}
+\renewcommand{\baselinestretch}{1.3} % dan dong
+\setlength{\parindent}{5 ex} % dieu chinh tab moi dau doan van
+%======================================
+% header_footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{scrextend}
+\fancyhf{}
+% ============= package insert code =========================
+\usepackage{listings}
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82} 
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+%\setcounter{secnumdepth}{4} %đánh số subsubsection
+% package table
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{lipsum} % just for dummy text- not needed for a longtable
+%======================================
+\usepackage{subfiles} % bien dich tai file con, khong can phai quay ve main 
+%\usepackage{subfig}
+\usepackage{subfigure}
+%cac goi danh cho phan thuat ngu viet tat
+\usepackage{glossaries}
+%dong khung phu luc
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{mdframed}
+\usepackage{amsmath}
+\usepackage{fancybox}%khung cho bia
+\newmdenv[linecolor=black,skipabove=\topsep,skipbelow=\topsep,
+leftmargin=-5pt,rightmargin=-5pt,
+innerleftmargin=5pt,innerrightmargin=5pt]{mybox}
+\def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
+\newcommand\dotline[2][.5em]{\leavevmode\hbox to #2{\dotfill{#1}\hfil}}
+\begin{document}
+
+\title{ĐỒ ÁN TỐT NGHIỆP 2019}
+%\maketitle
+\subfile{bia.tex}
+\pagebreak
+\subfile{bialot.tex}
+\pagebreak
+\pagenumbering{roman}
+\subfile{nxGiangVien}
+\pagebreak
+\subfile{nxPhanBien}
+\pagebreak
+\changefontsizes{13 pt}
+\subfile{Loinoidau.tex}
+
+\pagebreak
+\changefontsizes{13 pt}
+\subfile{Loicamon.tex}
+
+%\pagebreak
+%\subfile{Tomtatbaocao.tex}
+
+\pagebreak
+\subfile{ABSTRACT.tex}
+\pagebreak
+
+\renewcommand{\contentsname}{Mục lục}
+\addcontentsline{toc}{chapter}{Mục lục} \tableofcontents
+\pagebreak
+
+\renewcommand{\listfigurename}{\changefontsizes{30pt}{Danh mục hình vẽ}}
+\addcontentsline{toc}{chapter}{Danh mục hình vẽ}\listoffigures
+\pagebreak
+
+\renewcommand{\listtablename}{\changefontsizes{30pt}{Danh mục bảng biểu}}
+\addcontentsline{toc}{chapter}{Danh mục bảng biểu}\listoftables
+\pagebreak
+
+{\pagestyle{plain}
+\subfile{Danhmuccacthuatnguviettat.tex}
+\cleardoublepage}
+
+%======================================
+% header_footer
+\rhead{\textsc{Đồ Án Tốt Nghiệp 2019}}
+\rfoot{ \textbf{\thepage}|Page}
+\lhead{\textsc{Hoàng Trung Kiên}} % left foot
+\renewcommand{\headrulewidth}{2 pt} % cho header
+\renewcommand{\footrulewidth}{1 pt} % cho footer
+\changefontsizes{13 pt}
+\pagenumbering{arabic}
+%=======================
+% noi dung
+
+\input{chapter1.tex}
+
+\input{chapter2.tex}
+
+%\input{chapter3.tex}
+\input{chapter3_new.tex}
+
+\input{chapter4.tex}
+
+\input{Tongketdoan.tex}
+\input{Tailieuthamkhao.tex}
+\input{Phuluc.tex}
+\printbibliography
+\end{document}

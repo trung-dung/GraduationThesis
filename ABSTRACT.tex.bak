@@ -1,0 +1,29 @@
+\thispagestyle{plain}
+\addcontentsline{toc}{section}{Abstract}
+\begin{center}
+\textbf{ABSTRACT} 
+\end{center}
+\vspace*{0.5cm}
+Environmental monitoring has an important role in ensuring quality of life and limiting the risk of harm to the environment and living organisms.\\
+This project will research and design prototyping devices continuously to monitor the water environment for the aquaculture sector.\\
+The mission of the project includes:\\
+CHAPTER 1: OVERVIEW OF THE SYSTEM
+\begin{itemize}
+\item   Evaluating the importance of the system.
+\item   Determining the purpose of research and research methods. 
+\end{itemize}
+CHAPTER 2: UNDERSTANDING THEORY.
+Learn the issues:
+\begin{itemize}
+\item   32-bit MCU Microcontroller ARM Cortex-M3 core of the company STMicroelectronics.
+\item 	Using the programming tools to development on 32-bit microcontroller ARM Cortex - M3. (STM32CubeMX configuration software, software loading: ST-Link, J-Link... Software IDE, compilers: C Keil, IAR, Coocox,...)
+\item	GSM Network.
+\item	Module SIM Ublox Leon G-100 (Application-based on GSM/GPRS)
+\end{itemize}	
+CHAPTER 3: SYSTEM DESIGN
+\begin{itemize}
+\item   Analysis of requirements and design a solution.
+\item	Design printed circuits.
+\item	Test and run the test.
+\item	Next direction of development.
+\end{itemize}	

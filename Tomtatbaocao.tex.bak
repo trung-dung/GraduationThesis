@@ -1,0 +1,16 @@
+\thispagestyle{plain}
+\addcontentsline{toc}{section}{Tóm tắt báo cáo}
+\begin{center}
+\textbf{TÓM TẮT BÁO CÁO} 
+\end{center}
+\vspace*{0.5cm} 
+Với sự  bắt đầu của cách mạng công nghiệp lần 4, khi đó tất cả các hệ thống vật lý được trực tiếp giám sát, trao đổi thông tin với con người thông qua IoT. Và khi IoT trở thành xu thế thì nó cũng đem đến một yêu cầu phải có một công nghệ không dây phù hợp hơn cho nó, và LoRa chính là giải pháp hữu hiệu giải quyết những yêu cầu của hệ thống IoT. \par
+Đồ án này xuất phát từ nhu cầu thực tế của một hệ thống IoT khi cần ứng dụng công nghệ LoRa cần phải xây dựng một mạng kết nối nhiều thiết bị cùng một lúc và kết nối với các hệ thống mạng khác để có thể truyền dữ liệu. Vì vậy cần phải xây dựng một giao thức đa truy nhập cho Gateway và Nodes. Đồ án này tập trung vào việc xây dựng phương thức đa truy nhập cho thiết bị xử dụng module LoRa và thiết kế thiết bị Gateway làm nhiệm vụ kết nối giữa một mạng LoRa có topology hình sao với máy tính. Đồ án sẽ thực hiện nghiên cứu về:
+\begin{itemize}
+\item	Truyền, nhận dữ liệu sử dụng công nghệ LoRaWAN.
+\item	Cấu hình cho mạng hình sao.
+\item	Giao tiếp giữa các nút trong mạng với gateway.
+\item	Tích hợp vào thiết bị IoT (BKRES).
+\end{itemize}\par
+Qua khoảng thời gian triển khai đồ án, em đã đạt được các kết quả khả quan, đạt được mục đích là xây dựng được phương thức đa truy nhập cho mạng LoRaWAN theo topology hình sao. Tuy vẫn còn hạn chế nhưng em hi vọng những kết quả của đề tài sẽ là tiền đề tốt cho các đề tài khác cần sử dụng những kiến thức tương tự trong tương lai không xa.
+

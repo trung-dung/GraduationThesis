@@ -1,0 +1,179 @@
+\thispagestyle{plain}
+\chapter*{Phụ lục}
+\addcontentsline{toc}{chapter}{Phụ Lục}
+\changefontsizes{11pt}
+%\begin{mybox}
+\begin{center}
+\changefontsizes{13pt}{\textbf{Hàm main của Gateway}}
+\end{center}
+\begin{lstlisting}
+int main(void)
+{
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+  /* Configure the system clock */
+  SystemClock_Config();
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_SPI3_Init();
+  MX_USART1_UART_Init();
+  /* USER CODE BEGIN 2 */
+  SX1278_Config();
+  /* USER CODE END 2 */
+  while (1)
+  {
+	uint8_t e = receivePacketTimeoutACK (&hspi3, 10000);
+	if (!e){
+		UART_print ("\nReceive msg");
+		char msg[40] = {0};
+		for (uint8_t i = 0; i < packet_received.length; i++){
+			msg[i] = (char)packet_received.data[i];
+		}
+		int ID = packet_received.src;
+		if (msg[1] == 'D'){
+			char title[100];
+			sprintf(title, "\nReceive Data form node %d: ", ID);
+			UART_print(title);
+			UART_print(msg);
+		}
+		else checkNode(ID, msg);	
+	}
+	else UART_print ("\nDon't have msg");
+  }
+}
+\end{lstlisting}
+\newpage
+\begin{center}
+\changefontsizes{13pt}{\textbf{Hàm kiểm tra bản tin xác thực của Gateway}}
+\end{center}
+\begin{lstlisting}
+void checkNode (int nodeAddr, char msg[]){
+		char title[100];
+		sprintf(title, "\nSend accepted Msg to Node %d", nodeAddr);
+		char *response;
+		uint8_t e;
+		UART_print(title);
+		if (msg[2] == 's' && msg[3] == 'a' && msg[4] == 'n' && msg[5] == 's' && msg[6] == 'l' && msg[7] == 'a' && msg[8] == 'b'){
+			response = "1";
+			UART_print ("\nGateway: 1");
+			arrNodeAddr[numberofNode++] = nodeAddr;
+		}
+		else{
+			response = "0";
+			UART_print ("\nGateway: 0");
+		}
+		uint8_t cnt;
+		do{ 
+			e = sendPacketTimeoutACKRetries(&hspi3, nodeAddr, response);
+			cnt++;
+			HAL_Delay (5);
+		}
+		while (e > 0 && cnt < 3);
+}
+\end{lstlisting}
+\newpage
+\begin{center}
+\changefontsizes{13pt}{\textbf{Hàm main của nút}}
+\end{center}
+\begin{lstlisting}
+int main(void)
+{
+  /* MCU Configuration----------------------------------------------------------*/
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+  /* Configure the system clock */
+  SystemClock_Config();
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_SPI3_Init();
+  MX_USART1_UART_Init();
+  /* USER CODE BEGIN 2 */
+  SX1278_Config();
+  /* USER CODE END 2 */
+	delay = NODE_ADDRESS * 10;
+	requestJoinNetwork(GWAY_ADDRESS);
+  while (1)
+  {
+  /* USER CODE END WHILE */
+		if (joinedNetwork == 1)
+				sendData(GWAY_ADDRESS);
+		HAL_Delay(15000);
+  /* USER CODE BEGIN 3 */
+  }
+}
+\end{lstlisting}
+\newpage
+\begin{center}
+\changefontsizes{13pt}{\textbf{Hàm yêu cầu tham gia mạng của nút}}
+\end{center}
+\begin{lstlisting}
+void requestJoinNetwork (uint8_t GWaddr)
+{
+		char msgRQ[20] = "@Rsanslab";
+		uint8_t e;
+		do{
+				e	= sendPacketTimeoutACK (&hspi3, GWaddr , msgRQ);
+				if (e == 0){
+						UART_print ("\nSend msg_request successful, waiting msg_acception");
+						uint8_t state = receivePacketTimeoutACK (&hspi3, 10000);
+						char msgAccept[10] = {0};
+						if (state == 0 && packet_received.src == GWAY_ADDRESS){
+							for (uint8_t i = 0; i < packet_received.length; i++){
+									msgAccept[i] = (char) packet_received.data[i];
+							}
+							if (msgAccept[0] == '1'){
+									UART_print ("\nGateway accepted");
+									joinedNetwork = 1;
+							}
+							else{
+									UART_print ("\nGateway didn't accept");
+									joinedNetwork = 2;
+							}
+							//delay = NODE_ADDRESS * 10;
+						}
+				}
+				else{
+					UART_print("\nSend msg_request nonsuccessful");
+					//int x = rand() % 10;
+					HAL_Delay (1000);
+					//delay *= 2;
+				}
+		}
+		while (e);
+}
+\end{lstlisting}
+\newpage
+\begin{center}
+\changefontsizes{13pt}{\textbf{Hàm gửi dữ liệu của nút}}
+\end{center}
+\begin{lstlisting}
+void sendData (uint8_t GWAddr){
+		char msgData[100] = "@DN045<~1Gq!J1,UaD2)R'I0f(O='UY5E$cWE>!!!!d!!!!g!!!!f!!!!c!!!!b!!!!~>";
+		//sprintf(msgData, "", counter);
+		delay = 10 * NODE_ADDRESS;
+		uint8_t e;
+		uint8_t cnt = 0;
+		do{
+				e = sendPacketTimeoutACK(&hspi3, GWAddr, msgData);
+				cnt_sent++;
+				cnt++;
+				if (e > 0){
+					//int x = rand() % 10;
+					HAL_Delay (delay);
+					if (delay *2 < 2000) delay *= 2;
+				}
+				else
+					counter++;
+		}
+		while(e && cnt < 5);
+		char tmp[100];
+		if (e == 0){
+			sprintf(tmp, "\nNode %d :received %d, retries %d, deleted %d, sent %d",NODE_ADDRESS, counter, cnt, cnt_huy_goi, cnt_sent);
+			UART_print(tmp);
+			}
+		else 
+			cnt_huy_goi++;
+}
+\end{lstlisting}
