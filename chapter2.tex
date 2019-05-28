@@ -1,416 +1,332 @@
 \chapter{Cơ sở lý thuyết}
 \label{chapter2}
-Chương này em sẽ trình bày những kiến thức cần có để xây dựng được một mạng hình sao sử dụng công nghệ truyền thông LoRa. Đây là những kiến thức cơ bản về LoRa, đa truy nhập trong mạng không dây, các thiết bị phần cứng được sử dụng cũng như một số công cụ phần mềm hỗ trợ thiết kế và lập trình.
-\section{Công nghệ LoRa}  
-$LoRa^{TM}$ (Long Range Radio) \cite{2} là một công nghệ truyền thông không dây có phạm vi hoạt động lớn, tiêu tốn ít năng lượng và sử dụng dải tần miễn phí (unlicensed radio spectrum), dải tần này được sử dụng trong công nghiệp, khoa học và y tế (ISM band). LoRa được phát triển bởi Cycleo SAS (sau này được mua lại bởi SemTech). Mục đích tạo ra công nghệ LoRa là nhằm loại bỏ repeater, giảm chi phí đầu tư vào thiết bị, tăng cường thời gian hoạt động, tăng dung lượng mạng và hỗ trợ cho mạng có số thiết bị lớn. Công nghệ LoRa nằm lớp vật lý, được sử dụng cho truyền thông phạm vi lớn. Hầu hết công nghệ không dây sử dụng kỹ thuật điều chế số theo tần số tín hiệu FSK (Frequency Shift Key). Tuy nhiên, LoRa lại sử dụng kỹ thuật điều chế Chirp Spread Spectrum (CSS) để tiết kiệm năng lượng nhằm tăng khoảng cách truyền. LoRa là công nghệ đầu tiên sử dụng kỹ thuật điều chế CSS được thương mai hóa. Trước đó, kỹ thuật điều chế CSS chỉ được dùng trong quân sự và hàng không vũ trụ. Nhờ những ưu điểm về năng lượng và tầm hoạt động, LoRa phù hợp để ứng dụng trong mạng WSN cũng như các thiết bị IoT.
-\subsection{Kỹ thuật điều chế CSS}
-Theo tài liệu \cite{3}, LoRa dựa trên kỹ thuật điều chế Chirp Spread Spectrum (CSS) (Hình \ref{refhinh2_1}{}). CSS được xem là một kỹ thuật Direct-Sequence Spread Spectrum. CSS phù hợp với nhu cầu mạng IoT bởi vì nó cho phép chống nhiễu tốt, phạm vi sử dụng lớn và tiêu thụ ít năng lượng. Trong kỹ thuật trải phổ CSS, tín hiệu chirp được mô tả bằng hàm pha tức thời $\phi(t)$ hoặc một hàm thời gian đặc biệt $f_c(t)$. $f_c(t)$ được gọi là hàm tín hiệu chirp chưa được xử lý (the raw chirp) do:
+Công nghệ truyền thông dùng trong Internet of Thing (IoT) phát triển dựa trên dài tần miễn phí là điểm cốt lõi của 2 công nghệ truyền thông là Sigfox và LoRa. Được biết đến như là công nghệ mạng diện rộng công suất thấp (LPWAN) và chúng có cùng mục tiêu, ví dụ như là thiết lập khoảng cách truyền thông lớn, công suất thấp và tốc độ truyền dữ liệu thấp. Mặc dù có điểm chung về kỹ thuật và thương mại, nhưng chúng vẫn khác nhau ở một số điểm. Tầng vật lý của Sigfox truyền thông ở dải Ultra narrow band còn Lora sử dụng kỹ thuật trải phổ để điều chế tín hiệu. Trong chương này em tập trung trình bày về những đặc điểm kỹ thuật chung nhất của công nghệ truyền thông LoRa. Trong tương lai nếu IoT phát triển mạnh sẽ có hàng triệu, thậm chí hàng tỷ thiết bị sẽ sử dụng kỹ thuật điều chế này. Đa truy nhập kênh truyền trong lớp A của giao thức mở LoRaWAN dựa trên nguyên lý của giao thức ALOHA. Với mạng sử dụng giao thức đa truy nhập ALOHA thì hiệu suất truyền thông không bị va chạm thấp khoảng 18\% nhưng với truyền thông cự ly dài và không yêu cầu tốc độ cao vẫn phù hợp để sử dụng giao thức này. LoRaWAN được sở hữu trí tuệ bởi Alliance và phiên bản mới nhất của giao thức là 1.1 (2017). Với đồ án này chúng em sẽ nghiên cứu bộ chuẩn giao thức LoRaWAN và thực thi chúng trong trong việc đa truy nhập có các thiết bị truyền thông dùng công nghệ LoRa. 
+
+\section{Kỹ thuật điều chế LoRa}
+
+LoRa viết tắt cho “Long Range” là một công nghệ truyền thông không dây được phát triển đặt biết cho các ứng dụng sử dụng truyền thông khoảng các lớn và mức tiêu thụ năng lượng thấp. Nó sử dụng kỹ thuật trải phổ và điều chế chirp để truyền dữ liệu qua một khoảng rộng sử dụng tần số từ 137 Mhz tới 1020 Mhz, tuy nhiên, sẽ sử dụng một số tần số thuộc dải của ISM như: 169, 433, 868 và 915 MHz. LoRa cho phép truyền một số lượng nhỏ dữ liệu nên nó rất hữu ích với các ứng dụng mạng cảm biến không dây. LoRa là ứng dụng thương mai đầu tiên cho kỹ thuật trải phổ chirp. \par
+	LoRa cho phép truyền thông với khoảng cách lớn và tiêu tốn ít năng lượng là do sử dụng ưu điểm của kỹ thuật điều chế trải phổ chirp. Phương pháp điều chế này được Semtech giữ bí mật, tuy nhiên chắc chắn là được phát triển dựa trên cơ chế điều chế trải phổ Chirp. LoRa sử dụng các hệ số trải phổ trực giao để triển khai các data rate và công suất khác nhau cho các ứng dụng khác nhau. Sự kết hợp giữa tổ hợp 3 tham số là băng thông, coding rate và hệ số trải phổ sẽ tạo nên các chế độ truyền khác nhau của LoRa. Semtech đưa ra một công thức tính toán thời gian ToA (Time on the Air) là một hàm kết hợp của SF, CR, BW và kích thước payload. Để hiểu kỹ hơn về kỹ thuật điều chế LoRa, cần phải hiểu một số các ý tưởng kỹ thuật cơ bản, sẽ lần lượt được trình bày trong các tiểu mục dưới. 
+	
+	\subsection{Công thức Shannon-Hartley}
+	Trong lý thuyết thông tin, định lý Shannon-Hartley chỉ ra tốc độ tối đa truyền tin ở một kênh truyền thông. Với một kênh truyền có tham số băng thông và bị ảnh hưởng bởi nhiễu, dung lượng của một kênh truyền được tính như sau:
+	\begin{equation}
+	C = B \times log_2(1+\frac{S}{N})
+	\end{equation}
+	Trong đó: 
 \begin{itemize}
-\item Khi tăng tuyến tính, một tín hiệu up-chirp bắt đầu từ $-\dfrac{B}{2}$ đến $\dfrac{B}{2}$,
-\item Khi giảm tuyến tính, một tín hiệu down-chirp bắt đầu từ $\dfrac{B}{2}$ đến $-\dfrac{B}{2}$, 
+\item	$C$ là dung lượng kênh tính bằng bit trên giây 
+\item	$B$ là băng thông kênh (Hertz)
+\item	$S$ là tổng công suất của tín hiệu nhận trên băng thông B 
+\item	$N$ là tổng công suất nhiễu trên kênh 
+\item	$\frac{S}{N}$ là tỷ số SNR của kênh
+\end{itemize} 
+
+	Sau khi tính  $\log_2()$ ta có biểu thức $\frac{C}{B} = 1.433 \times \frac{S}{N}$, từ công thức trên cho thấy rằng, nếu muốn tăng dung lượng kênh thì có thể cố định tỷ số SNR mà tăng băng thông kênh truyền. Điều này là ý tưởng cơ bản của kỹ thuật điều chế trải phổ.
+	\subsection{Kỹ thuật trải phổ}
+	\begin{figure}[h!] % hinh 21
+			\centering
+			\includegraphics[width=0.8\linewidth]{./img/21.pdf}
+			\caption{Kỹ thuật trải phổ sử dụng chuỗi mã trải phổ}
+			\label{fig:fig21}
+	\end{figure}
+	
+	\begin{figure}[h!] % hinh 22
+			\centering
+			\includegraphics[width=0.8\linewidth]{./img/22.pdf}
+			\caption{Sơ đồ giải trải phổ}}
+			\label{fig:fig22}
+	\end{figure}	
+		
+	Theo như công thức Shannon, khi tăng băng thông tín hiệu, ảnh hưởng của nhiễu có thể hạn chế tối thiểu. Kỹ thuật trải tín hiệu trên miền tần số được gọi là kỹ thuật trải phổ. Có nhiều loại  kỹ thuật trải phổ. Một trong những kỹ thuật cơ bản nhất là kỹ thuật trải phổ trực tiếp (DSSS), nó sử dụng một code có tần số lớn hơn với tín hiệu dữ liệu để trải phổ tần số của tín hiệu cần truyền. Mã code này được gọi là mã trải phổ hay chuỗi chip (chip sequence), nó được nhân với tín hiệu dữ liệu trước khi truyền đi. \par 
+	Phía máy thu thực hiện tách tín hiệu dữ liệu bằng cách nhân với chuỗi trải phổ một lân nữa. \par
+	Hệ số trải phổ của tín hiệu chip (chip signal) phụ thuộc và tỷ số chip rate và tốc độ dữ liệu yêu cầu (required data rate). Nó được gọi là processing gain ($G_p$), được tính theo công thức:
+	\begin{equation}
+	G_p = 10 \times log_{10}(\frac{R_c}{R_b})
+	\end{equation}
+Trong đó: 
+\begin{itemize}
+\item	$G_p$  = Processing gain (dB) 
+\item	$R_c$  = chip rate (bps) 
+\item	$R_b$  = bit rate yêu cầu (bps) 
 \end{itemize}
-trong đó, B là băng thông của d ải tần ISM được sử dụng. Hàm $f_c(t)$ được xác định bởi công thức:
+Quá trình này không những tạo ra tín hiệu kháng lại nhiễu kênh truyền mà còn kháng được nhiễu từ các tín hiệu khác. Processing gain cho phép tái xây dựng lại tín hiệu ban đầu chính xác mặc dù SNR có thể âm. Bất kỳ can nhiễu nào cũng dễ dàng được lọc. \par
+	Thách thức lớn nhất của việc triển khai DSSS cho các ứng dụng low-cost và công suất thấp là phải cần có một nguồn xung cực kỳ chính xác. Hơn thế nữa, yêu cầu chip codes dài hơn tốn thời gian giải trải phổ tại máy thu. Nó không những khiến cho máy thu trở nên phức tạp mà lại còn tăng thời gian xử lý ở máy thu. Phía thu  phải luôn ở trạng thái đồng bộ với máy phát, nó không thể đáp ứng được với một ứng dụng yêu cầu công suất thấp.
+	\subsection{Chirp Spread-Spectrum}
+	\begin{figure}[h!] % hinh 23
+			\centering
+			\includegraphics[width=0.5\linewidth]{./img/23.pdf}
+			\caption{Up-chirp trong miền thời gian}
+			\label{fig:fig23}
+	\end{figure}
+	
+	\begin{figure}[h!] % hinh 24
+			\centering
+			\includegraphics[width=0.5\linewidth]{./img/24.pdf}
+			\caption{Down-chirp trong miền thời gian}
+			\label{fig:fig24}
+	\end{figure}
+Một chirp là một tín hiệu hình sin tăng dần hoặc giảm dần của tần số theo thời gian. Nó dựa trên một tín hiệu chirp tự nhiên cho trải phổ băng thông của tín hiệu gửi. Một chirp tăng dần tần số được gọi là up-chirp được minh hoạ ở hình \ref{fig:fig23}. \par
+Một chirp mà tần số giảm dần được gọi là down-chip, được mình hoạ ở hình \ref{fig:fig24}. \par 
+Up-chirp là một chirp có giá trị dương còn down-chirp có giá trị âm. Sự thay đổi tần số có thể là tuyến tính hoặc theo hàm số mũ. Băng thông của một tín hiệu chirp có sự khác biệt giữa tần số đầu tiên và tần số kết thúc. 
+
+\subsubsection{Nén xung (Pulse Compression)}
+	\begin{figure}[h!] % hinh 25
+			\centering
+			\includegraphics[width=0.8\linewidth]{./img/25.pdf}
+			\caption{Xung chirp và kết quả xung sau khi nén}
+			\label{fig:fig25}
+	\end{figure}
+		\begin{figure}[h!] % hinh 26
+			\centering
+			\includegraphics[width=0.8\linewidth]{./img/26.pdf}
+			\caption{Xung chirp và kết quả xung sau khi nén}
+			\label{fig:fig26}
+	\end{figure}
+Nén xung là một quá trình mà một xung có chu kỳ dài với công suất đỉnh thấp được biến đổi thành một xung có công suất đỉnh lớn và có chu kỳ ngắn. Chirps cho phép thực hiện nén xung rất thẳng bằng tương quan sử dụng một \textit{matched filter}. Đầu ra của sự tương quan với một \textit{matched filter} là một xung kết hợp  công suất của xung chirp trên chu kỳ hiện tại của nó (minh hoạ hình \ref{fig:fig25}). Kết quả là cho một processing gain lớn và \textit{distance resolution}. \par 
+
+Hình \ref{fig:fig26} mô tả các khối chức năng của hệ thống CSS. Dữ liệu được điều chế sử dụng up và down chíp tại máy thu và giải điều chế sử dụng bộ tương quan + matched filter cho nén xung. Nhận lại được các xung nhọn có năng lượng cao dễ dàng cho việc giải mã. \par 
+Đặc tính quan trọng của CSS là khoảng data rate rất lớn. Chirp dựa trên trải phổ có thể dùng để trải tín hiệu cả với miền thời gian và tần số.
+
+\subsubsection{	Trải tần số (Frequency Spreading)}
+Như giải thích ở trên, trải băng thông tín hiệu có thể làm giảm ảnh hưởng của nhiễu kênh truyền và làm cho tín hiệu miễn nhiễm với can nhiễu. Sử dụng xung chirp của băng thông cao hơn, băng thông tín hiệu có thể lớn hơn so với yêu cầu.
+\subsubsection{	Trải thời gian (Time Spreading)}
+
+Băng thông của tín hiệu chirp chỉ phụ thuộc vào tần số bắt đầu và tấn số kết thúc của chirp, data rate của kỹ thuật điều chế chirp có thể tăng hoặc giảm phụ thuộc vào băng thông. Nên có thể tự do lựa chọn băng thông và tốc độ dữ liệu của tín hiệu mong muốn và điều chỉnh BT product như yêu cầu. Nó có kết quả với tín hiện robust và high BT product. \par 
+	Hệ thống CSS có nhiều sự khác nhau tuỳ thuộc vào yêu cầu của ứng dụng. Các đặc điểm nổi bật khác bao gồm: interference robustness, kháng đa đường, công suất thấp, trễ thấp và CSS không cần đồng bộ. Với những đặc điểm trên CSS đã được phát triển trong chuẩn IEEE 802.15.4. 
+	
+	\subsection{LoRa Chirp Spread-Spectrum}
+	Kỹ thuật điều chế tại LoRa PHY [4] được phát triển dựa trên CSS truyền thống, kết hợp thêm các đặc điểm của hệ thống DSSS. Tín hiệu LoRa được điều chế sử dụng một tín hiệu chirp tần số biến đổi liên tục. Loại bỏ sự cần thiết có một nguồn xung đồng hồ chính xác và sự đồng bộ tại phía thu. Cả offset tần số và offset thời gian đề tương đương ở cả phía phát và phía thu. Điều này làm cho PHY đơn giản hơn và có khả năng hoạt động yêu cầu công suất thấp và robust communication link. \par  
+	Băng thông của tín hiệu chirp sinh ra cho trải phổ là tương tương với tín hiệu.
+Bit-rate của điều chế LoRa được định nghĩa bởi công thức:
+	\begin{equation}
+	R_b = SF \times \frac{1}{T_s}
+	\end{equation}
+	Trong đó: 
+\begin{itemize}
+\item	$R_b$  là bit-rate (bps) 
+\item	$SF$ là hệ số trải phổ từ 7 – 12 
+\item	$T_s$ là chu kỳ ký tự (s) 
+\end{itemize}
+	Chu kỳ ký tự được định nghĩa:
+	\begin{equation}
+	T_s = \frac{2^{SF}}{BW}
+	\end{equation}
+	Trong đó, BW là băng thông của tín hiệu điều chế (Hz). Theo sự tương quan ở trên, bit-rate và chu kỳ ký tự tỷ lệ nghịch với nhau và tỷ lệ thuận với hệ số trải phổ. \par 
+Chip rate của kỹ thuật điều chế LoRa được định nghĩa:
 \begin{equation}
-f_c(t) = \pm \dfrac{B}{T_s}t
+R_c = R_s \times 2^{SF}
 \end{equation}
-trong đó $T_s$ là chu kỳ ký hiệu (symbol period). Mối quan hệ giữa băng thông và chu kỳ ký hiệu được thể hiện trong công thức $T_s = \dfrac{2^{SF}}{B}$ trong đó SF là hệ số trải phổ nằm trong khoảng [7,..., 12]. $D_s$ là tỷ lệ ký hiệu trong tín hiệu được truyền và $D_b$ là tỷ lệ bit, $D_s =\dfrac{D_b}{SF}$.
-\par 
-Trong LoRa, một ký hiệu được tạo từ SF bit nhị phân. Mỗi ký hiệu được mô tả bởi một chirp duy nhất. Các chirp khác nhau trực giao với nhau để khi được khôi phục ở bên nhận các ký hiệu tránh được nhiễu (Inter-symbol interference). Nếu chúng ta có bộ M ký hiệu, ký hiệu m, $m \in [0, M-1]$, thu được bởi chễ raw chirp $f_c(t)$ và $\tau_m = \dfrac{m}{B}$. Những chirp nằm bên ngoài khoảng $[-\dfrac{T_s}{2}, \dfrac{T_s}{2}]$ được chuyển dịch chu kỳ $[-\dfrac{T_s}{2}, -\dfrac{T_s}{2} + \tau_m]$. Do đó, chirp liên quan đến việc truyền ký tự thứ m được chia làm hai phần:
+Trong đó: 
 \begin{itemize}
-\item Nếu  $t \in [-\dfrac{T_s}{2}, -\dfrac{T_s}{2} + \tau_m]$, raw chirp nhỏ hơn $(T_s - \tau_m)$,
-\item Nếu $t \in [-\dfrac{T_s}{2} + \tau_m, \dfrac{T_s}{2}]$, raw chirp lớn hơn $\tau_m$.
+\item	$R_c$  là chip rate (chips per second) 
+\item	$R_s$  là symbol rate (symbol per second) 
 \end{itemize}
-\begin{center}
-    \begin{figure}[h]
-    \begin{center}
-     \includegraphics[scale=0.5]{image/hinh2_1}
-    \end{center}
-    \caption{Nguyên lý điều chế dữ liệu của công nghệ LoRa}
-    \label{refhinh2_1}
-    \end{figure}
-\end{center}
-\par
-Nhờ sử dụng tín hiệu chirp  mà các tín hiệu LoRa với các tỷ lệ chirp khác nhau có thể hoạt động trong cùng 1 khu vực mà không gây nhiễu cho nhau. Điều này cho phép nhiều thiết bị LoRa có thể trao đổi dữ liệu trên nhiều kênh đồng thời (mỗi kênh cho 1 chirprate).
-\subsection{Kiến trúc mạng LoRa}
-Một mạng sử dụng công nghệ truyền thông LoRa \cite{4} sẽ được triển khai theo cấu trúc hình sao và gồm hai phần là back-end và front-end (Hình \ref{refhinh2_2}). Phần back-end là máy chủ mạng chứa thông tin nhận được từ các cảm biến. Còn phần front-end chứa module Gateway và các nút (end-device nodes). Gateway có nhiệm vụ làm cầu nối giữa các nút và máy chủ. Thông tin mà Gateway nhận được sẽ được gửi đến máy chủ qua kết nối IP.
-\begin{center}
-    \begin{figure}[h]
-    \begin{center}
-     \includegraphics[scale=0.22]{image/hinh2_2}
-    \end{center}
-    \caption{Kiến trúc mạng LoRa \cite{4}}
-    \label{refhinh2_2}
-    \end{figure}
-\end{center}
-\par 
-LoRa hoạt động dải tần ISM \cite{4}, tuy nhiên ở mỗi nước (khu vực) thì dải tần này lại khác nhau. Cụ thể là:
+	Symbol rate được định nghĩa như sau: 
+	\begin{equation}
+	R_s = \frac{1}{T_s} = \frac{BW}{2^{SF}}
+	\end{equation}
+	Nên:
+	\begin{equation}
+	R_c = \frac{BW}{2^{SF}}\times 2^{SF}
+	\end{equation}
+	Vậy nên LoRa gửi một chip trên một giây trên một Hertz. Hơn thế nữa, mã sửa sai có chiều dài biến đổi cũng được sử dụng nhằm tăng robustness. Kết quả data-rate của kỹ thuật điều chế LoRa như sau:
+	\begin{equation}
+	R_b = SF \times \frac{\frac{4}{4+CR}}{\frac{2^{SF}}{BW}}
+	\end{equation}
+	Trong đó:
 \begin{itemize}
-\item	Ở Châu Âu, dải tần ISM là: 433MHz hoặc 863-870MHz, gồm có 3 kênh (tương ứng với mỗi dải tần): 433.175 MHz, 433.375 MHz, 433.575 MHz hoặc 868.10 MHz, 868.30 MHz, 868.50 MHz,
-\item	Dải tần ISM ở Mỹ là: 902-928MHz,
-\item 	Dải tần ISM ở Trung Quốc là: 779-787MHz,
-\item 	Ở Úc, dải tần ISM là: 915-928MHz.
+\item	$CR$ là coding rate khoảng từ 1 đến 4
+\item	$SF$ là hệ số trải phổ khoảng từ 7 – 12
+\item	$BW$ là băng thông tín hiệu, thường dùng 125, 250 và 500 kHz.
 \end{itemize}
-\par 
-Dựa vào cơ chế truyền thông, các nút LoRa (end-device) được chia thành 3 loại \cite{4} gồm:
+
+
+\subsection{Các đặc điểm nổi bật}
+
+\subsubsection{	Tích tần số - thời gian cao}
+Điều chế LoRa có thể tạo nên tích tần số thời gian (bandwidth-time product) lớn hơn 1 [4]. Khi có sự kết hợp giữa báo hiệu không đồng bộ, nó khiến tín hiệu LoRa tốt hơn về cả băng tần cũng như băng can nhiễu. Điều chế LoRa có thể xây dựng sự chọn lọc kênh lên đến tới 90 dB và in-band rejection lên tới 20 dB.
+\subsubsection{	Khả năng mở rộng của băng thông}
+Điều chế LoRa có khả năng đáp ứng cả ứng dụng băng rộng và băng hẹp do vì sự khả năng mở rộng vốn có (inherent scability) của tần số và băng thông. Module LoRa có thể dễ dàng cấu hình để phù hợp với các loại ứng dụng bằng cách thay đổi giá trị (SF, BW, công suất phát) các thanh ghi cấu hình.
+\subsubsection{	Mức tiêu thụ năng lượng thấp}
+LoRa Modulation thừa kế đặc tính đường bao không đổi (constant envelope) của kỹ thuật điều chế FSK, do đó nó có khả năng sử dụng ít năng lượng và hiệu quả ở trạng thái khuếch đại công suất. Hơn thế nữa, processing gain của trải phổ chirp cũng cho phép công suất đầu ra của bộ phát được giảm xuống mà không làm giảm quỹ đường truyền (link budget).
+\subsubsection{	Multipath Robustness}
+LoRa có khả năng chống lại hiệu ứng đa đường và hiệu ứng fading ở trong môi trường đô thị.
+\subsubsection{	Long Range}
+LoRa có khoảng cách truyền thông lớn so với các kỹ thuật như FSK ở cùng mức năng lượng. Khi kết hợp các thuộc tính robustness đã trên trên, quỹ đường truyền (link budget) của LoRa có thể dịch 4 lần tăng cường ở khoảng cách.
+\subsubsection{	Kháng lại hiệu ứng Doppler}
+LoRa có khả năng kháng hiệu ứng Doppler. Nó khiến cho LoRa có thể ứng dụng trong các ứng dụng có tính di động [4].
+\subsubsection{	Tăng cường dung lượng mạng}
+Nhiều tín hiệu trải phổ có thể được truyền đồng thời thông qua cùng một kênh vì LoRa sử dụng các hệ số trải phổ trực giao. Tín hiệu sử dụng các hệ số trải phổ khác sẽ được lọc như một tín hiệu nhiễu tại máy thu.
+\subsubsection{	Đặc điểm về định vị}
+LoRa có khả năng phân biệt được giữa lỗi thời gian và tần số, nó cho phép có thể ứng dụng trong các ứng dụng định vị và khoảng cách.
+
+\subsection{Các tham số kỹ thuật chính}
+Dưới đây là một số tham số đặc trưng, quan trọng nhất của tầng vật lý LoRa:
 \begin{itemize}
-\item	Class A (Baseline): Khung truyền được chia thành uplink và downlink, bao gồm 1 khe thời gian uplink, tiếp theo là 2 khe thời gian downlink. Thiết bị loại này chỉ có thể nhận dữ liệu từ máy chủ sau khi nó đã gửi dữ liệu,
-\item Class B (Beacon): Thiết bị đầu cuối mở thêm một khe nhận trong khoảng thời gian downlink, cùng thêm hai khe thời gian được chỉ định trong loại A. Ngoài khả năng nhận dữ liệu như các thiết bị loại A, các thiết bị loại B cũng có thể sử dụng một loạt khe nhận được kích hoạt bởi các bản tin kiểu Beacon đươc gửi từ gateway,
-\item	Class C (Continuous): Các thiết bị loại này có thể nhận dữ liệu bất kể khi nào trừ lúc truyền dữ liệu.
+\item Tần số sóng mang (carrier frequency- CF): biểu diễn tần số trung tâm của dải tần số truyền dẫn tín hiệu. Tất cả gồm ba dải tần số (433 MHz, 868MHz, 915MHz) được đặc tả trong datasheet SX1278 Semtech,
+\item Băng thông (BW): Là khoảng tần số có khả năng cho tín hiệu truyền qua. Semtech SX1276 đưa ra băng tần từ 7.8kHz đến 500kHz. Băng thông lớn cho phép truyền dữ liệu với datarate cao, thời gian trong không gian thấp (time on air) nhưng độ nhạy thu thấp như là kết quả của nhiễu. Những giá trị băng thông hay được sử dụng trong truyền thông LoRa: 125, 250 và 500 kHz,
+\item Hệ số trải phổ (SF): biểu thị cho tỷ số chirp (chirp rate) sử dụng để truyền dữ liệu thông qua băng thông khả dụng. Với một SF, thì ta có 2SF chips/symbol. SF thường dùng từ SF6 đến SF12. Với SF12 thì ta có độ nhạy thu và khoảng cách truyền phát là lớn nhất, nhưng tốc độ truyền thấp nhất (Hệ số trải phổ tỷ lệ thuận với khoảng cách truyền thông và tỷ lệ nghịch với tốc độ data rate),
+\item Coding Rate (CR): được sử dụng trong công nghệ LoRa là một tỷ số sửa lỗi trước (Forward Error Correction FEC rate). Nó cho phép khôi phục lại các bit thông tin bị lỗi do tạp âm. Tỷ số CR cao thì khả năng sửa lỗi cũng tăng nhưng thời gian ngoài không gian (ToA) cũng tăng. Với LoRa, CR có thể là 4/5, 4/6, 4/7 hoặc 4/8,
+\item Độ nhạy thu $\rho$ (dBm) được định nghĩa bởi Semtech: $\rho (dBm) = −174 + logBW + NF + SNR$. Trong đó -174dB là nhiễu theo lý thuyết, BW băng thông kênh truyền, NF là hệ số tạp âm máy thu (tùy vào phần cứng, với SX1276, SX1272 NF = 6 dB), SNR là tỷ số công suất tín hiệu trên công suất nhiễu.
+
 \end{itemize}
-    \begin{figure}[h]
-    \begin{center}
-     \includegraphics[scale=0.43]{image/hinh2_3}
-    \end{center}
-    \caption{Kiến trúc các lớp của thiết bị LoRa \cite{4}}
-    \label{refhinh2_3}
-    \end{figure}
-Thiết bị loại A là đơn giản nhất và đảm bảo tiêu thụ năng lượng tối thiểu nhưng lại bị hạn chế khả năng nhận tin nhắn. Nên theo tiêu chuẩn LoRa, các thiết bị phải thực hiện tối thiểu được cơ chế truyền thông loại A. Hình \ref{refhinh2_3} sẽ cho ta thấy rõ hơn cấu trúc các lớp của một thiết bị LoRa.
-\subsection{Thông số hoạt động chính của LoRa}
-Đối với chipset SX1278 của Semtech, hệ số trải phổ SF (Spreading Factor) có giá trị từ 7 đến 12 \cite{5}. Hệ số SF thể hiện mối quan hệ giữa tốc độ truyền dữ liệu và khoảng cách truyền. Lựa chọn hệ số SF cao có thể làm tăng phạm vi hoạt động nhưng giảm tốc độ truyền dữ liệu và ngược lại. Mỗi ký hiệu được mã hóa bởi một mã có độ dài $2^{SF}$ chip. Do việc mã hóa một ký hiệu bằng nhiều tín hiệu chip, điều này làm ảnh hưởng đến tốc độ truyền dữ liệu. Mỗi quan hệ giữa tốc độ truyền dữ liệu và hệ số SF được thể hiện trong Hình \ref{refhinh2_4}{}a tại các băng thông khác nhau.\\
-\begin{figure}[h]
-\centering
-\subfigure[Tốc độ truyền dữ liệu tương ứng với mỗi hệ số SF.]
-  {\includegraphics[width=.49\linewidth]{image/hinh2_4}}\hfill
-\subfigure[Tốc độ truyền dữ liệu tương ứng với mỗi tốc độ CR.]
-  {\includegraphics[width=.49\linewidth]{image/hinh2_5}}
-\caption{Mối quan hệ giữa tốc độ truyền dữ liệu với các hệ số SF, CR \cite{5}}
-\label{refhinh2_4}
-\end{figure}
-\par 
-Theo tài liệu \cite{5}, LoRa thường sử dụng băng thông BW  Bandwidth) có giá trị là 125 KHz nhưng cũng có thể mở rộng lên thành 250 KHz và 500 KHz để truyền tín hiệu. Với băng thông có độ rộng lớn, LoRa hạn chế được nhiễu kênh truyền, hiệu ứng doppler và fading. Máy phát gửi dữ liệu với tốc độ chip bằng với băng thông nên với băng thông là 125 kHz thì tốc độ chip là 125 kcps.
-\par 
-Tốc độ mã hóa CR (Coding Rate) của chipset SX1278 của SemTech thì CR có 4 giá trị là 4/5, 4/6, 4/7 và 4/8. Nếu tốc độ mã hóa là k/n, thì k là số bit có ích (chứa thông tin được mã hóa) và n là số bit ở đầu ra. Do đó n - k là số bit dự phòng, những bit này cho phép người nhận phát hiện và sửa lỗi trong bản tin nhưng nó cũng làm giảm tốc độ truyền dữ liệu. Tốc độ truyền dữ liệu tương ứng với mỗi CR được thể hiện trong Hình \ref{refhinh2_4}{}b ở mỗi băng thông khác nhau. Ngoài ra, tốc độ truyền dữ liệu cũng phụ thuộc vào độ dài gói tin (Hình \ref{refhinh2_6}). \\
-\begin{figure}[h]
-\centering
-\subfigure[Thời gian truyền gói tin với BW = 125 kHz and CR = 0.]
-  {\includegraphics[width=.49\linewidth]{image/hinh2_7a}}\hfill
-\subfigure[Thời gian truyền gói tin với BW = 125 kHz and CR = 02.]
-  {\includegraphics[width=.49\linewidth]{image/hinh2_7b}}
-\caption{Thời gian truyền gói tin trong không khí của LoRa. \cite{5}}
-\label{refhinh2_6}
-\end{figure} 
-\begin{center}
-    \begin{figure}[h]
-    \begin{center}
-     \includegraphics[scale=0.6]{image/hinh2_6}
-    \end{center}
-    \caption{Cấu trúc một gói dữ liệu được truyền đi \cite{5}.}
-    \label{refhinh2_5}
-    \end{figure}
-\end{center}
-\par
-Kích thước lớn nhất của một gói tin LoRa là 256 byte, cấu trúc một gói tin (Hình \ref{refhinh2_5}{}) gồm các thành phần sau:
+
+\subsection{Thời gian truyền}
+Thời gian truyền của bản tin LoRa phụ thuộc vào các tham số chính như $BW$, $CR$, $SF$. Sự kết hợp của ba tham số sẽ cho kết quả thời gian truyền của bản tin có sự khác nhau.
+Như công thức tính symbol-rate $T_s = \frac{1}{R_s}$, tổng thời gian truyền 1 bản tin của LoRa còn phụ thuộc vào trường mào đầu. Chu kỳ cho một phiên truyền trường mào đầu như sau:
+\begin{equation}
+T_{preamable} = (n_{preamable} + 4.25) \times T_s
+\end{equation}
+Trong đó:
 \begin{itemize}
-\item  Preamble: là trường chuỗi bit để dò tìm tín hiệu của LoRa trong không gian,\newline
-\item  Header: chứa thông tin về kích thước của Playload và xem có Payload CRC hay không. Giá trị của Header cũng được check CRC kèm theo,
-\item  Payload: chứa dữ liệu ứng dụng truyền qua LoRa, có kích thước từ 2 đến 255 byte. Trường này còn chứa các trường sau:
+\item $n_{preamable}$ là chiều dài trường mào đầu (10 - 65540)
+\item $T_{preamble}$ là thời gian truyền trường mào đầu
+\item $T_s$ là symbol rate của một preamble
+\end{itemize}
+Tương tự, thời gian truyền của payload phụ thuộc vào số lượng ký tự trong payload. Chiều dài ký tự của payload với explicit header được tính như sau:
+\begin{equation}
+{{n}_{payload}}=8+max(cell\frac{(2P+4CRC-SF+7)}{(SF-2D)}(CR+4),0)
+\end{equation}
+Và cho implicit header như sau:
+\begin{equation}
+{{n}_{payload}}=8+max(cell\frac{(2P+4CRC-SF+2)}{(SF-2D)}(CR+4),0)
+\end{equation}
+Trong đó:
+\begin{itemize}
+\item	SF là hệ số trải phổ được chọn
+\item	D = 1 khi tối ưu data rate được bật và ngược lại
+\item	CR là coding rate (tỷ số mã hoá)
+\item	CRC = 1 khi CRC được chọn
+\item	P là số byte của payload (1 - 255)
+\end{itemize}
+Kết quả chu kỳ truyền dần của payload như sau:
+\begin{equation}
+T_{payload} = n_{payload} \times T_s
+\end{equation}
+Tổng thời gian truyền tính:
+\begin{equation}
+T_{packet} = T_{payload} + T_{preamble}
+\end{equation}
+
+\section{Giao thức chuẩn mở LoRaWAN}
+Trong mục này em trình bày những đặc điểm cốt lõi của chuẩn mở LoRaWAN. Bao gồm các điểm chính như kiến trúc hệ thống, mô hình chồng giao thức, các lớp thiết bị được phân loại theo chuẩn LoRaWAN, cơ chế điều khiển đa truy nhập lớp MAC, các loại bản tin, tiến trình thực hiện trong mạng LoRaWAN Alliance. Tất cả sẽ được trình bày chi tiết lần lượt ở các mục phía dưới.
+\subsection{Đặc tả kỹ thuật}
+
+\subsubsection{Kiến trúc hệ thống}
+	\begin{figure}[h!] % hinh 27
+			\centering
+			\includegraphics[width=1\linewidth]{./img/27.pdf}
+			\caption{Kiến trúc hệ thống mạng LoRaWAN}
+			\label{fig:fig27}
+	\end{figure}
+	\begin{figure}[h!] % hinh 28
+			\centering
+			\includegraphics[width=1\linewidth]{./img/28.pdf}
+			\caption{LoRaWAN Stack Protocol}
+			\label{fig:fig28}
+	\end{figure}	
+	
+LoRaWAN Alliance là một chuẩn mở truyền thông không dây sử dụng tầng vật lý là công nghệ điều chế LoRa, được thiết kế để phù hợp với cự ly tryền thông lớn nhưng mức tiêu thụ năng lượng thấp và được dựa trên hệ thống truyền thông Radio đơn chặng. Một mạng LoRaWAN được thiết kế theo đồ hình hình sao của các hình sao (star of stars topology) được cấu thành từ 3 phần tử cơ bản: thiết bị cuối (vd: sensor node), gateways, một máy chủ mạng trung tâm đôi khi có thể thêm một server ứng dụng Hình \ref{fig:fig27}.
+\begin{itemize}
+\item	Thiết bị đầu cuối, thường là các nút mạng cảm biến, thu thập dữ liệu vật lý từ các hệ cảm biến. Thiết bị đầu cuối này có tích hợp module truyền thông LoRa (thường là các dòng chip thu phát LoRa của Semtech) có chức năng truyền thông với gateways thông qua công nghệ điều chế LoRa.
+\item	Gateways điều phối các khung thông tin từ thiết bị đầu cuối tới server mạng sử dụng một giao diện Backhaul với thông lượng lớn, thường là Ethernet, WiFi, 3G/4G hoặc vệ tinh. Một bản tin từ một thiết bị đầu cuối phát quảng bằng LoRa có thể nhận được từ nhiều Gateway. Tất cả các bản tin này đều được chuyển tiếp về phân hệ backend. Tuy nhiên, tại NS (Network Server) chuẩn LoRaWAN đã đưa ra cơ chế xoá những bản tin trùng lặp.
+\item	Server mạng giải mã các gói tin gởi bởi thiết bị đầu cuối, thực hiện kiểm tra mã hóa và Data-rate đáp ứng (apdaptive data rate) và tạo ra các gói tin phản hồi tới thiết bị đầu cuối.
+\item	Mỗi ứng dụng nhận dữ liệu từ server. Nó có thể giải mã gói tin được bảo mật và dùng thông tin đó cho các chức năng của ứng dụng.
+\end{itemize}
+Liên kết truyền thông lớn, số lượng anten (trạm gateway), và thời gian sử dụng pin của thiết bị đầu cuối được cải thiện nhờ kiến trúc mạng hình sao. Truyền thông với tốc độ dữ liệu (Data rate) khác nhau không có tạp âm, tốc độ dữ liệu nằm trong khoảng 300 bps tới 5 kbps, băng thông 125 kHz. \par 
+	Hình \ref{fig:fig28} minh hoạ chồng giao thức (protocol stack) của giao thức LoRaWAN. Ở phía LoRa Nodes, có 3 tầng giao thức được cài đặt bao gồm: (i) tầng ứng dụng; (ii) tầng MAC; (iii) tầng vật lý. (i) Về tầng ứng dụng, tầng này được cài đặt trên LoRa Nodes có thể triển khai các ứng dụng như quan trắc các tham số môi trường, ví dụ, nhiệt độ, độ ẩm, cảm biến gas, khói trong một toà nhà. Dữ liệu đo được sẽ được xử lý và đóng gói gửi xuống tầng MAC (LoRaWAN), tầng này được cài đặt các thành phần tuân thủ theo đặc tả kỹ thuật của chuẩn LoRaWAN [5], bao gồm các cơ chế điều khiển đa truy nhập, các loại bản tin điều khiển MAC, các bản tin kiểm tra thông tin điều khiển. Sau khi, được đóng gói theo chuẩn LoRaWAN, toàn bộ khung sẽ được đẩy xuống tầng vật lý. Tại tầng vật lý, dữ liệu đóng gói thêm header của LoRa Module rồi được tiến hành điều chế trước khi gửi ra antenna. Quá trình nhận dữ liệu được thực hiện ngược lại.\par
+	Tiếp theo là chồng giao thức được cài đặt trên LoRa Gateway. Một bộ chuyển tiếp gói được cài đặt, nó điều khiển giao thức lớp vật lý LoRa Gateway (Sử dụng module LoRa dành chuyên cho gateway – có khả năng nhận và xử lý đồng thời nhiều bản tin) nhằm nhận/phát các bản tin LoRa RF. Dữ liệu được cộng thêm siêu dữ liệu (metadata) là các thông tin bổ sung về tình trạng của hệ thống rồi chuyển đổi thành IP thông qua Ethernet, Wifi hoặc IP thông qua mạng thông tin di động. Dữ liệu được đẩy qua các tầng giao thức Backhaul IP Stack, MAC, PHY tuỳ thuộc loại công nghệ được lựa chọn. \par
+	Tại LoRa Server, một chồng giao thức TCP/IP cũng được tích hợp ở đáy để nhận các bản tin UDP mà gateway gửi lên, dữ liệu sau khi được tách header TCP/IP được đưa đến bộ giao thức LoRaWAN, tương ứng với của LoRa Nodes để tách dữ liệu. Cuối cùng, gửi lên đến tầng ứng dụng, trọn đủ giao thức từ tiến trình đến tiến trình.
+	
+\subsubsection{LoRaWAN Classes}
+	\begin{figure}[h!] % hinh 29
+			\centering
+			\includegraphics[width=\linewidth]{./img/29.pdf}
+			\caption{Các lớp theo chuẩn LoRaWAN Alliance}
+			\label{fig:fig29}
+	\end{figure}
+LoRaWAN định nghĩa ba lớp chức năng: Class A, class B và class C (Hình \ref{fig:fig29}):
+\begin{itemize}
+\item	Class A (song phương): class A được thực thi bởi tất cả các thiết bị LoRaWAN, nó được biết đến là cơ bản của LoRaWAN. Class A cho phép truyền thông song phương giữa một thiết bị đầu cuối và server mạng, nó có một cửa số truyền dần uplink (TX window - node tới server) theo bởi 2 cửa sổ truyền dẫn downlink nhỏ hơn (2 RX window). Các khe truyền dẫn được lập lich theo cơ chế điều khiển đa truy nhập ngẫu nhiên cơ bản là ALOHA. Mức tiêu thụ năng lượng ở lớp A là lớn nhất, trễ cũng lớn nhất,
+\item	Class B được thiết kế dựa trên lớp A, tuy nhiên nó được hỗ trợ thêm cơ chế lập lịch truyền dẫn đường xuống (additional scheduled downlink transmission). Mức tiêu thụ năng lượng là trung bình (cao hơn classA và thấp hơn classC),
+\item	Class C: Thiết bị mở cửa số nhận liên tục, tương tự như thuật toán cửa sổ trượt. Nó có mức tiêu thụ năng lượng cao nhưng trễ truyền lan là nhỏ nhất. Theo đặc tả kỹ thuật của Alliance thì các thiết bị phải thực hiện tất cả chức năng của lớp A, còn lớp B, C là các tùy chọn cho các ứng dụng phức tạp hơn.
+
+\end{itemize}
+
+\subsubsection{Cấu trúc bản tin}
+	\begin{figure}[h!] % hinh 210
+			\centering
+			\includegraphics[width=0.8\linewidth]{./img/210.pdf}
+			\caption{Cấu trúc khung truyền tầng vậy lý LoRa}
+			\label{fig:fig210}
+	\end{figure}
+		\begin{figure}[h!] % hinh 211
+			\centering
+			\includegraphics[width=0.7\linewidth]{./img/211.pdf}
+			\caption{Cấu trúc PHY LORA Payload}
+			\label{fig:fig211}
+	\end{figure}
+		\begin{figure}[h!] % hinh 212
+			\centering
+			\includegraphics[width=0.7\linewidth]{./img/212.pdf}
+			\caption{Cấu trúc khung MAC Payload}
+			\label{fig:fig212}
+	\end{figure}
+		\begin{figure}[h!] % hinh 213
+			\centering
+			\includegraphics[width=0.8\linewidth]{./img/213.pdf}
+			\caption{Cấu trúc khung FHDR}
+			\label{fig:fig213}
+	\end{figure}
+	Hình \ref{fig:fig210} minh hoạ cấu trúc bản tin được gửi đi tại tầng vật lý LoRa, gồm các trường đầu tiên là trường mào đầu (preamble), tiếp đến là PHY Header và một trường CRC cho PHY Header. Tiếp đến là phần payload của bản tin tầng vật lý, cuối cùng là trường CRC cho toàn bộ bản tin. \par 
+	Lên đến giao thức tầng MAC, nội dung PHY Payload có thể là một trong 3 cấu trúc như minh hoạ Hình \ref{fig:fig211}, bao gồm một tường MAC Header, một trường MIC để kiểm tra tính toàn vẹn của dữ liệu. Trường ở giữa có thể là MAC Payload, yêu cầu tham gia mạng (Join Request) hoặc phản hồi yêu cầu tham gia mạng (Join Respone). Khi trường dữ liệu ở giữa là Join Request hoặc Join Response thì đó bản tin dùng trong quá trình thực hiện kích hoạt thiết bị cuối – cuối. Còn trong trường hợp truyền dữ liệu hoặc trao đổi các bản tin điều khiển MAC thì trường đó là MAC Payload.  \par 
+	Với MAC payload (Hình \ref{fig:fig212}) thì khung gồm 3 trường là FHDR, FPort và FRMPayload, trương FRMPayload sẽ trực tiếp chứa dữ liệu người dùng khi trường FPort khác không. Trường hợp FPort bằng không, thì trường FRMPayload rỗng, bản tin khi này là bản tin điều khiển lớp MAC. Cụ thể hơn trong trường FHDR (Hình \ref{fig:fig213}) chứa 4 bytes là DevAddr, một trường điều khiển khung (FCtrl), một trường đếm khung (FCnt) và trường cuối cùng là FOpts là trường trực tiếp chứa mã của câu lệnh điều khiển MAC (MAC commands – cụ thể các câu lệnh MAC xem tại đặc tả chuẩn LoRaWAN [6]) 
+
+\subsubsection{Các lệnh điều khiển MAC}
+
+Về cơ bản, MAC command dùng để điều khiển khiển mạng, nó được dùng bởi LoRa Nodes tương tác với NS ở lớp MAC. Nó cung cấp các công cụ nhằm kiểm tra khi thiết bị Node có kết nối chính chính xác trong LoRaWAN. Một số câu lệnh MAC thường được trao đổi như DutyCycleReq, DevStatusReq, RXTimingSetupReq, … nhằm để kiểm tra trạng thái thiết bị, điều kiện kênh truyền, khe của sổ nhận,… Bởi vậy, MAC commands được trao đổi thông qua trường tuỳ chọn khung (Frame option field) hoặc trong FRMPayload. FRMPayload chứa Fport với giá trị bằng không nếu MAC commands được biểu diễn trong đó. Nhưng, trong khi dữ liệu được mã hoá thì đối với MAC command thì không được mật mã hoá. 
+\subsection{Cơ chế kích hoạt các thiết bị (End-node, LoRa Nodes)}
+		\begin{figure}[h!] % hinh 214
+			\centering
+			\includegraphics[width=\linewidth]{./img/214.pdf}
+			\caption{Cơ chế kích hoạt LoRa Node}
+			\label{fig:fig214}
+	\end{figure}
+Phiên bản mới nhất của chuẩn LoRaWAN là phiên bản v1.1 được công bố năm 2017, trong phạm vi đồ án này em thực hiện triển khai thực thi theo chuẩn cũ hơn là v1.0.3 (2016) nên các tên, chức năng các khoá được sử dụng cũng khác với phiên bản 1.1. Số lượng các khoá được lưu trên thiết bị giữa các phiên bản khác nhau, việc tạo ra các khoá trung gian và các quá trình tính toán bảo mật giữa các phiên bản cũng khau. Để hiểu chi tiết hãy xem các phiên bản chuẩn của Alliance cung cấp. \par 
+	Hình \ref{fig:fig214} minh hoạ hai quá trình kích hoạt thiết bị của chuẩn LoRaWAN. Cơ chế đơn giản là cơ chế tự kích hoạt bằng tay. Với cơ chế này, một LoRa Nodes muốn tham gia mạng không phải trao đổi bản tin điều khiển với LoRa Server, mà sẽ cấu hình trực tiếp AppSKey, NetSKey trên LoRa App Server và LoRa Nodes. Sau đó, thiết bị sẽ gửi dữ liệu lên Server ngay. \par 
+	Quá trình kích hoạt khác là quá trình kích hoạt tự động (Over The Air Activation), với quá trình này, thiết bị LoRa Nodes được cấu hình sẵn AppEUI, DevEUI là các mã định danh duy nhất. Trong quá trình này, LoRa Nodes và LoRa App Server sẽ trao đổi các bản tin Join Request và Join Response trước khi một LoRa Nodes chính thức tham gia mạng và gửi dữ liệu về ứng dụng. 
+
+\subsubsection{Cơ chế bảo mật}
+		\begin{figure}[h!] % hinh 215
+			\centering
+			\includegraphics[width=\linewidth]{./img/215.pdf}
+			\caption{Sơ đồ sinh khoá được sử dụng trong chuẩn LoRaWAN 1.0.3}
+			\label{fig:fig215}
+	\end{figure}
+	Trong chuẩn LoRaWAN nhiều phương pháp bảo mật, mã hoá, đảm bảo tính toàn vẹn của dữ liệu được tích hợp. Theo Hình \ref{fig:fig27} mô tả kiến trúc tổng quan hệ thống LoRaWAN chỉ ra rằng, có một tầng bảo mật giữa Network Server và các thiết bị đầu cuối nhằm bảo mật các bản tin, các khung dữ liệu và trường Header, nhằm trao đổi thông tin điều khiển phục vụ về mặt hệ thống. Một tầng bảo mật giữa tiến trình – tiến trình giữa tầng ứng dụng tại Nodes và tầng ứng dụng tại Server App nhằm bảo mật dữ liệu người dùng. Với chuẩn LoRaWAN phiên bản v1.0.x thì chỉ có một khoá gốc (khoá sơ cấp – root key) là NwkKey, trong quá trình hoạt động, khoá này sẽ sinh ra các khoá sơ cấp khác nhằm phục vụ các quá trình khác nhau.  Các thuật toán để sinh ra các khoá sơ cấp và mục đích sử dụng vào quá trình bảo mật, bảo vệ sự toàn vẹn dữ liệu được minh hoạ trên sơ đồ sinh khoá thứ cấp Hình \ref{fig:fig215}.
+	
+	\subsection{LoRaWAN Server}
+	Trong mục này, em xin trình bày lý thuyết tổng quan về chức năng của các phần tử - thành phần thuộc phân hệ LoRa Server bao gồm Network Server, Application Server và Bộ điều khiển mạng (Network Controller).
+	\subsubsection{Network server (NS)}
+	NS thực hiện xác thực khung dữ liệu nhận được và chuyển tiếp dữ liệu người dùng đến một Server Ứng dụng. Khung nhận được được truyền từ gateway tới NS sử dụng JSON/GWMP/UDP/TCP/MQTT hoặc LoRa Gateway Connector Protocol của TTN. Khung dữ liệu tại NS sẽ được gửi đến Server ứng dụng thông qua JSON/TCP/UDP. Tại Server mạng được tích hợp thêm kỹ thuật mật mã hoá toàn bộ khung truyền LoRa tới LoRa end-devices (LoRa Nodes). Hàm băm được định nghĩa theo chuẩn LoRaWAN. Một máy chủ mạng đơn có thể kết nối với nhiều máy chủ ứng dụng và nhiều bộ điều khiển mạng. Remote Server hoặc bộ điều khiển sẽ được xác định bởi ứng dụng.
+	\subsubsection{Application server (AS)}
+	Máy chủ ứng dụng LoRaWAN có nhiệm vụ trong quá trình kích hoạt thiết bị, tham gia quá trình mật mã hoá dữ liệu người dùng trước khi gửi xuống gateway, và giải mật mã hoá dữ liệu nhận được từ thiết bị. Một máy chủ ứng dụng đơn hoặc bộ điều khiển mạng có thể có một mote được xác định bởi ứng dụng. Dữ liệu sau khi xử lý bởi App Server sẽ được các ứng dụng người dụng lấy ra và thực hiện các chức năng của người dùng đặt ra.
+	\subsubsection{Network controller (NC)}
+	Bộ điều khiển mạng nhận các tham số của mạng được dùng bởi các mote và các đặc tính của tín hiệu nhận được từ gateway cho mỗi khung truyền. Nó có thể thực hiện sử dụng những dữ liệu này nhằm điều phối hoạt động của mạng, mục đích để tăng cường dung lượng, hiệu năng của mạng. Ví dụ, nó có thể tính toán xác xuất để tìm các tham số phù hợp để tối ưu hoá dung lượng mạng. Một bộ điều khiển mạng có thể kết nối với nhiều server mạng. 
+	
+	\section{Một số giới hạn khác về việc sử dụng LoRaWAN}
+Ngoài các đặc điểm chính về kỹ thuật LoRa và LoRaWAN đã đề cập ở trên. Việc xây dựng ứng dụng có sử dụng công nghệ điều chế truyền thông LoRa và giao thức LoRaWAN còn có một số quy định về việc sử dụng tài nguyên. \par 
+	Theo chuẩn LoRaWAN, việc sử dụng tần số ISM được phân ra theo các vùng miền khác nhau, tại các vùng miền này, những thông số kỹ thuật được giới hạn bao gồm:
 	\begin{itemize}
-	\item	MAC header: phụ thuộc vào kiểu của frame (là dữ liệu hoặc ACK), phiên bản của giao thức và hướng của nó (uplink hoặc downlink).
-	\item	MAC payload: chứa dữ liệu.
-	\item 	MIC: được sử dụng như là chữ ký số của dữ liệu.
+	\item	Duty Cycle: là cơ chế điều khiển nhằm hạn chế số lượng các thiết bị truy nhập kênh truyền vô tuyến dùng chung. Ví dụ với EU-868 thì Duty Cycle là 1\%. Điều này có nghĩa, nếu một bản tin truyền LoRa hết t giây thì nodes phải đợi một khoảng 99t để gửi bản tin tiếp theo,
+\item	Công suất truyền: Công suất truyền cũng ảnh hưởng đến khoảng cách truyền thông và dung lượng kênh mà thiết bị chiếm. Nên công suất truyền đi cũng được giới hạn. Với EU-868 thì công suất bức xạ đẳng hướng tương đương cho phép là +14 dBm,
+\item	Cơ chế điều khiển đa truy nhập sử dụng trong LoRaWAN đang là ALOHA, giao thức này có hiệu suất sử dụng kênh truyền không được tốt, trong tương lai các hướng nghiên cứu phát triển có thể là xây dựng các giao thức khác tích hợp vào LoRaWAN như TDMA, CSMA, …,
+\item	Ngoài ra, còn một số tham số khác bị giới hạn theo chuẩn như tốc độ dữ liệu, băng thông, CR, kích thước tối đa payload, hoặc tần số được sử dụng,… để có thông tin chi tiết hãy tham khảo tài liệu chuẩn REGIONAL Specification [7].
+
 	\end{itemize}
-\item	CRC: là trường tùy chọn và chứa các byte kiểm tra vòng CRC (Cyclic Redundancy Check).
-\end{itemize}
-\section{Đa truy nhập trong mạng không dây}
-Đa truy nhập (Multiple Access) là một kỹ thuật cho phép nhiều thiết bị sử dụng chung một kênh truyền. Kỹ thuật này nằm ở lớp MAC (Medium Access Control), đây là một lớp đặc biệt quan trọng trong những mạng LAN (Local Area Network), trong đó có mạng không dây bởi vì các thiết bị trong mạng này sử dụng chung môi trường truyền.
-\par
-Giả sử có nhiều thiết bị đang sử dụng kênh truyền, trong cùng một khoảng thời gian với cùng tần số, khi đó sẽ xảy ra hiện tượng va chạm. Do đó, cần phải có một biện pháp kiểm soát các thiết bị tham gia kênh truyền. Ví dụ như một mạng có băng thông là B, có N thiết bị đang tham gia kênh truyền, mạng sử dụng phương pháp ghép kênh phân chia theo tần số FDM (Frequency Division Multiplexing), khi đó băng thông được chia thành N dải tần, mỗi thiết bị sẽ sử dụng một dải tần. Tuy nhiên, với số lượng thiết bị lớn, thì những dải tần này bị chia quá nhỏ, do đó dễ gây nên can nhiễu. Do đó, cần có thêm những phương pháp kiểm soát kênh truyền. Đây là 4 phương pháp điều khiển truy nhập kênh truyền:
-\begin{itemize}
-\item Đa truy nhập phân chia theo tần số FDMA (Frequency Division Multiple Access): dải tần số sẽ được chia thành các dải tần số nhỏ không chồng lên nhau, và mỗi dải đó được sử dụng bởi một thiết bị khác nhau, 
-\item Đa truy nhập phân chia theo thời gian TDMA (Time Division Multiple Access): mỗi thiết bị trong mạng sử dụng chung một dải tần nhưng chỉ được phép truyền trong một khoảng thời gian cụ thể,
-\item Đa truy nhập phân chia theo mã CDMA (Code Division Multiple Access): các thiết bị trong mạng sẽ sử dụng chung một dải tần và có thể gửi bản tin cùng một thời gian nhưng những tín hiệu đó sẽ được mã hóa bằng các mã ngẫu nhiên khác nhau,
-\item Đa truy nhập phân chia theo không gian SDMA (Space Division Multiple Access): các thiết bị trong mạng sẽ sử dụng chung một dải tần, truyền/nhận bản tin cùng một lúc và không sử dụng mã ngẫu nhiên để mã hóa. Tại trạm cơ sở, yêu cầu phải có một dãy ăng-ten lớn để khử nhiễu. 
-\end{itemize}
-Từ những phương pháp điều khiển kênh truyền trên, các giao thức đa truy nhập đã được phát triển.
-\subsection{ALOHA}
-Theo tài liệu \cite{6}, giao thức đa truy nhập đầu tiên bắt đầu một cách sơ khai ở Hawaii vào đầu những năm 1970, do Norman Abramson đề xuất. Gọi là "sơ khai" bởi vì nó không được sử dụng cho mạng di động. Mục đích của Norman Abramson và các cộng sự khi tạo ra mạng này để kết nối những thiết bị ở những hòn đảo xa tới máy chủ ở Honolulu. Sau đó, công trình của ông, hệ thống pure ALOHA (ALOHA nguyên thủy), đã thu hút sự chú ý của rất nhiều nhà nghiên cứu và nó đã được phát triển thêm thành giao thức slotted ALOHA.
-\subsubsection{Pure ALOHA}
-Ý tưởng của hệ thống ALOHA là rất đơn giản: người sử dụng sẽ truyền bản tin bất khi nào họ có dữ liệu. Do đó, va chạm trong ALOHA là điều dễ hiểu. Trong hệ thống ALOHA, sau khi trạm đã gửi bản tin của nó đến máy chủ, máy chủ sẽ phát quảng bá bản tin đó đến tất cả các trạm. Trạm gửi bản tin có thể biết được máy chủ đã nhận được bản tin của nó hoặc bản tin được gửi đã đúng chưa qua việc nhận lại bản tin từ máy chủ. Nếu việc gửi không thành công, bên gửi sẽ chờ một khoảng thời gian ngẫu nhiên nào đó rồi gửi lại. Thời gian chờ này phải ngẫu nhiên để tránh việc va chạm với bản tin quay trở lại từ máy chủ. Khi hệ thống có nhiều thiết bị cùng chia sẻ một kênh, điều đó dẫn đến việc xung đột kênh truyền. Hình \ref{aloha_conflict} mô tả quá trình gửi bản tin một cách tùy ý trong hệ thống ALOHA.\\
-\begin{figure}[htp]
-\begin{center}
-\includegraphics[scale=0.26]{image/aloha_conflict}
-\end{center}
-\caption{Các gói tin được truyền trong ALOHA \cite{6}}
-\label{aloha_conflict}
-\end{figure}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.3]{image/efficiency_aloha}
-\end{center}
-\caption{Hiệu năng của hai giao thức ALOHA và Slotted ALOHA}
-\label{efficiency_aloha}
-\end{figure}
-\par 
-Do không có cách nào để kiểm soát xung đột trong ALOHA, nên hiệu năng của giao thức này khá thấp như thể hiện trong Hình \ref{efficiency_aloha}{}.
-\subsubsection{Slotted Aloha}
-Theo tài liệu \cite{6}, ngay sau ALOHA, vào năm 1972, Roberts đã công bố một phương pháp giúp tăng gấp đôi hiệu năng của hệ thống ALOHA. Đề xuất của ông là chia thời gian thành những khe thời gian rời rạc gọi là slot, bắt đầu của mỗi khe thời gian là lúc cho mỗi trạm tham gia kênh truyền. Phương pháp này yêu cầu các trạm phải thống nhất với nhau về khe thời gian. Một cách để có sự đồng bộ này là một trạm đặc biệt sẽ phát ra tín hiệu để thông báo bắt đầu khe thời gian. Hiệu năng của Slotted Aloha được mô tả trong Hình \ref{efficiency_aloha}{}.
-\par 
-Trong nắng năm 1970, sau khi được tạo ra, Slotted ALOHA được sử dụng trong các thí nghiêm và rồi nhanh chóng bị lãng quên cũng như ALOHA.
-\subsection{Giao thức đa truy nhập dựa vào việc kiểm tra kênh truyền} 
-Khi một trạm truyền bản tin, nó sẽ không biết các trạm khác đang làm gì, do vậy ở vùng giao của vùng phát sóng hai trạm sẽ xảy ra nhiều xung đột. Do đó, cần có một giao thức mà trạm có thể cảm nhận được kênh truyền. Có nhiều giao thức nghe kênh truyền đã được đưa ra, sau đây em xin trình bày một số phiên bản của giao thức đa truy nhập dựa vào việc cảm nhận kênh truyền CSMA (Carrier Sense Multiple Access).
-\subsubsection{1-persistent CSMA}
-1-persistent CSMA \cite{6} là giao thức đơn giản nhất trong các giao thức CSMA. Khi trạm có dữ liệu, đầu tiền nó sẽ cảm nhận kênh truyền xem các trạm khác có đang gửi tin không. Nếu kênh truyền rảnh, trạm sẽ gửi dữ liệu. Ngược lại, nếu kênh truyền bận, trạm sẽ chờ đến khi kênh truyền rảnh. Sau đó trạm sẽ truyền bản tin. Nếu va trạm xảy ra, trạm sẽ chờ một khoảng thời gian ngẫu nhiêu và bắt đầu gửi lại. Quá trình gửi tin của trạm sẽ được mô tả trong lưu đồ thuật toán Hình \ref{2CSMA}{}a. Tuy nhiên, trong trường hợp hai trạm cùng chờ chạm thức 3 thực hiện xong quá trình gửi tin, khi đó hai trạm sẽ cùng gửi tin, xung đột sẽ xảy ra. Giao thức 1-persistent CSMA có hiệu năng tốt hơn so với ALOHA do có quá trình kiểm tra kênh truyền.\\
-\begin{figure}[h]
-\centering
-\subfigure[1-persistent CSMA.]
-  {\includegraphics[width=.42\linewidth]{image/flowchart_1per}}
-\hfill
-\subfigure[non-persistent CSMA.]
-  {\includegraphics[width=.55\linewidth]{image/flowchart_nonper}}
-\caption{Lưu đồ thuật toán của hai giao thức 1-persistent CSMA và non-persistent CSMA}
-\label{2CSMA}
-\end{figure} 
-\subsubsection{Non-persistent CSMA}
-Giao thức kiểm tra kênh truyền thức hai là nonpersistent CSMA. Theo tài liệu \cite{6}, cũng giống như 1-persistent CSMA, khi cảm nhận được kênh truyền rỗi, trạm sẽ gửi luôn bản tin. Tuy nhiên, khi kênh truyền bận, trạm sẽ không tiếp tục cảm nhận kênh truyền nữa mục đích để không cần ngay lập tức xác định thời điểm kết thúc của quá trình truyền tin trước. Thay vào đó, nó sẽ chờ một khoảng thời gian ngẫu nhiên rồi tiếp tục thuật toán. Hệ quả của quá trình này là sử dụng kênh truyền tốt hơn nhưng thời gian trễ dài hơn so với 1-persistent CSMA. Lưu đồ thuật toán Hình \ref{2CSMA}{}b mô tả giao thức nonpersistent CSMA.
-\subsubsection{p-persistent CSMA}
-Giao thức p-persistent CSMA \cite{6} khắc phục những nhược điểm của 1-persistent CSMA. Khi trạm sẵn sàng gửi dữ liệu, nó sẽ kiểm tra kênh truyền. Nếu kênh truyền rảnh, nó sẽ gửi dữ liệu với một xác xuất p hoặc đợi một mini slot (mini slot là khoảng thời gian nhỏ hơn rất nhiều so với thời gian truyền tối đa của tín hiệu) với xác xuất q = 1 - p sau đó kiểm tra lại kênh truyền. Khi kênh bận thì đợi kênh rỗi. Hình \ref{flowchart_pper} mô tả thuật toán của giao thức p-persistent CSMA. Giá trị xác suất p ảnh hưởng nhiều đến hiệu suất của kênh truyền.
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.45]{image/flowchart_pper}
-\end{center}
-\caption{Lưu đồ thuật toán giao thức p-persistent CSMA.}
-\label{flowchart_pper}
-%\end{figure}//
-%\begin{figure}
-\begin{center}
-\includegraphics[scale=0.48]{image/compare}
-\end{center}
-\caption{So sánh hiệu năng sử dụng kênh truyền của các phương pháp truy nhập kênh truyền ngẫy nhiên \cite{6}{}.}
-\label{compare}
-\end{figure}
-\par
-Hình \ref{compare} so sánh hiệu suất của 3 giao thức 1-persistent CSMA, nonpersistent CSMA, p-persistent CSMA cũng như ALOHA và slotted ALOHA.
-\subsubsection{CSMA/CA}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.26]{image/CSMACA}
-\end{center}
-\caption{Quá trình truyền tin của 2 trạm sử dụng giao thức CSMA/CA}
-\label{CSMACA}
-\end{figure}
-\noindent Do cơ chế kiểm tra trạng thái kênh truyền và cơ chế phát hiện va đập hoạt động không hiệu quả trong môi trường vô tuyền, nên cần có một giao thức CSMA được phát triển trong mạng vô tuyến đó là CSMA/CA (CSMA with Collision Avoidance). Cơ chế hoạt động của CSMA/CA (Hình \ref{CSMACA}{}):
-\begin{itemize}
-\item Trước khi truy nhập kênh truyền, kiểm tra trạng thái kênh truyền. Nếu xảy ra va đập, các trạm sẽ dừng truyền tin và gửi bản tin JAM SIGNAL để báo hiệu cho các trạm khác và back-off theo hàm mũ. Điều này có nghĩa, số lần truy nhập kênh truyền không thành công càng lớn thì thời gian back-off càng tăng,
-\item Nếu kênh truyền bận: đợi đến khi kênh truyền rỗi,
-\item Tiếp tục đợi thêm khoảng thời gian DIFS (DCF Inter-Frame Space) cho trước (DIFS = RTT),
-\item Back-off một số mini slot $t_{BO}$ ngẫu nhiên,
-\item Sau mỗi mini slot: $t_{BO} = t_{BO} - 1${},
-\item  Nếu trong thời gian back-off kênh truyền lại bận thì trạm dừng đếm lùi và bảo toàn giá trị $t_{BO}$ tại thời điểm dừng,
-\item Sau khi kênh truyền chuyển sang trạng thái rỗi một khoảng thời gian DIFS, trạm tiếp tục đếm lùi,
-\item Nếu $t_{BO}$ = 0 thì truy nhập kênh và gửi gói.
-\end{itemize}
-\subsection{Giao thức đa truy nhập tránh va chạm MACA}
-Ý tưởng cơ bản của giao thức MACA \cite{6} (Multiple Access with Collision Avoidance) (Karn, 1990) là sử dụng cơ chế tránh va đập. Quá trình truyền tin của trạm sử dụng giao thức MACA được mô tả trong Hình \ref{MACA}{}. Cơ chế tránh va đập gồm có các thành phần:
-\begin{itemize}
-\item Trước khi gửi: bên gửi sẽ quảng bá bản tin RTS (Ready-To-Send) cho các nút xung quanh biết là nó sắp sửa gửi bản tin,
-\item Khi nhận được RTS: bên thu quảng bá bản tin CTS (Clear-To-Send) để cho bên nhận và các nút xung quanh nó biết nó sẵn sàng nhận bản tin,
-\item Trong RTS và CTS mang theo bản tin NAV (Network Allocation Vector) chứa thời gian chiếm kênh truyền của bên phát,
-\item Các trạm khác dừng việc truy nhập kênh truyền trong khoảng thời gian NAV.
-\end{itemize}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[scale=0.4]{image/MACA}
-\end{center}
-\caption{Quá trình truyền tin của hai trạm sử dụng giao thức MACA}
-\label{MACA}
-\end{figure}
-Ở trên là một số giao thức đa truy nhập có thể áp dụng cho mạng không dây, mỗi giao thức có những ưu điểm và cũng có nhược điểm riêng. Đối với đề tài của mình, em xin lựa chọn việc xây dựng giao thức đa truy nhập của mình dựa trên giao thức ALOHA. Bởi vì, giao thức ALOHA đơn giản, dễ dàng triển khai. Ngoài ra, do dữ liệu cần truyền là nhỏ (dữ liệu lớn nhất trong một lần truyền là 255 byte), cùng với số lượng nút trong mạng ít nên rất phù hợp với việc ứng dụng giao thức ALOHA.
-\section{Module LoRa Ai Thinker SX1278 Ra-02}
-Ai Thinker là một hãng chuyên về lĩnh vực thiết kế và sản xuất module truyền thông không dây (WiFi, LoRa, GPRS,…) của Trung Quốc.
-\par 
-Module truyền thông LoRa SX1278 Ra-02 là một trong số những module sử dụng công nghệ LoRa có giá thành rẻ, sử dụng IC truyền thông LoRa SX1278 của Semtech. Hình ảnh module SX1278 cùng với sơ đồ chân và sơ đồ khối được thể hiện trong Hình \ref{SX1278}.
-\begin{figure}[t]
-	\centering
-	\subfigure[Hình ảnh thực tế Module LoRa Ai Thinker SX1278 Ra-02 \cite{*}]
-	{\includegraphics[width=0.45\linewidth]{image/hinh2_7}}
-	\subfigure[Sơ đồ chân IC SX1278 \cite{8}]
-	{\includegraphics[width=0.46\linewidth]{image/hinh2_9}}\\
-	\subfigure[Sơ đồ khối IC SX1278 \cite{8}]
-	{\includegraphics[scale=0.5]{image/hinh2_8}}%
-\caption{Module LoRa Ai Thinker SX1278 Ra-02}
-\label{SX1278}
-\end{figure}
-\par 
-Thông số của module LoRa Ai Thinker SX1278 Ra-02 \cite{7} gồm có:
-\begin{itemize}
-\item Kích thước: 17 x 16 mm,
-\item Hỗ trợ chuẩn giao tiếp SPI,
-\item Hoạt động trên dải tần: 410 – 525 MHz,
-\item Hỗ trợ công nghệ điều chế FSK, GFSK, GMSK và LoRa,
-\item Điện áp hoạt động: 2.5 – 3.7,
-\item Dòng điện tiêu thụ (Bảng \ref{bang2_1}),
-\item Công suất phát: 18 $\pm$ 1 dBm,
-\item Nhiệt độ hoạt động: -30 - 85 $^{\circ}$C .
-\end{itemize}
-\begin{table}[h]
-    \centering
-    \caption{Dòng điện tiêu thụ của module LoRa Ai Thinker SX1278~Ra-02 \cite{7}}
-    \begin{tabular}{|c|c|c|c|}
-     	\hline
-     	Tần số & RX & TX & Standby \\
-     	\hline
-     	433 MHz & 93 mA & 12,15 mA & 1,6 mA \\
-     	\hline
-     	470 MHz & 97 mA & 12,15 mA & 1,5 mA \\
-     	\hline
-    \end{tabular}
-    \label{bang2_1}
-\end{table}
-Theo datasheet của IC SX1278 do Semtech công bố \cite{8}, IC SX1278 là một trong những chip thu phát sóng điện từ sử dụng công nghệ LoRa, cung cấp một vùng phủ sóng rộng, tiêu thụ ít năng lượng và khả năng chống nhiễu tốt.
-\section{Vi điều khiển STM32F103}
-Vi điều khiển STM32F103 là loại vi điều khiển 32 bit với lõi ARM Cortex-M3 trên kiến trúc RICS của hãng STMicroelectronics (ST). Vi điều khiển lõi được sử dụng rộng rãi trong các thiết bị điện tử - tự động bởi khả năng xử lý vượt trội, kích thước nhỏ, dễ dàng cho việc lập trình. Vi điều khiển lõi ARM Cortex-M3 dựa trên kiến trúc ARMv7-M được thiết kế để tối ưu hóa hiệu suất cho các ứng dụng vi xử lý, có nhiều ngoại vi, khả năng đa kết nối đa năng, tương thích với nhiều công cụ (tools) nạp của nhiều hãng khác nhau, cho phép lập trình và phát triển các ứng dụng một cách nhanh chóng. Vi điều khiển Cortex-M3 tiêu thụ ít điện năng và chi phí thấp, đồng thời cung cấp khả năng tính toán cao. Dưới đây là một số thông số hoạt động của vi điều khiển STM32F103 \cite{9}{}:
-\begin{itemize}
-\item Tần số cao nhất: 72MHz,
-\item Dung lượng bộ nhớ flash: 256 KB,
-\item Dung lượng RAM: 48 KB,
-\item Dải điện áp 2,0 V – 3,6 V.
-\end{itemize}
-\begin{center}
-    \begin{figure}[h]
-    \begin{center}
-     \includegraphics[scale=0.3]{image/bang2_2}
-    \end{center}
-    \caption{Thông số họ vi điều khiển STM32F103xxx \cite{9}}
-    \label{refhinh2_9}
-    \end{figure}
-\end{center}
-\par 
-Bên cạnh đó, vi điều khiển STM32F103 còn hỗ trợ các tính năng sau \cite{9}:
-\begin{itemize}
-\item Bộ chuyển đổ ADC 12-bit,
-\item Tích hợp Timer 16-bit với hai bộ điều khiển PWM,
-\item Đầy đủ các kết nối thông dụng: I2C, SPI, I2S, CAN, USART,
-\item Hỗ trợ các loại ngoại vi như SDIO, USB,
-\item Hỗ trợ giao tiếp với ngoại vi thông qua các kênh DMA,
-\item Nạp chương trình thông qua 2 phương thức SWD và Bootloader,
-\item Tích hợp cảm biến nhiệt ngay trong CPU với độ phân giải 1 $^{\circ}$C.
-\end{itemize} 
-    \begin{figure}[h]
-    \begin{center}
-     \includegraphics[scale=0.4]{image/hinh2_10}
-    \end{center}
-    \caption{Sơ đồ chân của dòng vi điều khiển STM32F103RCT6 64 chân \cite{9}}
-    \label{refhinh2_10}
-    \end{figure}
-\section{Thiết bị giám sát các tham số môi trường nước BKRES}
-Thiết bị giám sát tham số môi trường nước BKRES là sản phẩm của đề tài cấp Sở “NGHIÊN CỨU MÔ HÌNH MẠNG CẢM BIẾN KHÔNG DÂY GIÁM SÁT MÔI TRƯỜNG NƯỚC PHỤC VỤ PHÁT TRIỂN NUÔI TÔM CHÂN TRẮNG TẠI QUẢNG NINH” do thầy giáo TS. Nguyễn Hữu Phát làm chủ nhiệm. Đây là hệ thống cảm biến tự động thu thập dữ liệu về môi trường nước nặm của hồ nuôi trồng thủy sản và cảnh báo kịp thời khi có dấu hiệu bất thường trong môi trường nước.
-\par 
-Hệ thống tích hợp nhiều loại cảm biến, có thể đo đồng thời nhiều thông số của nước cùng lúc, cảnh báo tại chỗ mỗi khi các thông số vượt ngưỡng an toàn, kết hợp với trung tâm dữ liệu tập hợp, phân tích và dự đoán khả năng có thể xảy ra.
-\par 
-Các chức năng chính của hệ thống BKRES gồm có:
-\begin{itemize}
-\item Hệ thống đo đạc được 7 thông số môi trường nước (với thông số chu kỳ thời gian cho trước) bao gồm:
-	\begin{itemize}
-	\item Bốn thông số được đo trực tiếp (sử dụng cảm biến) gồm có:
- 		\begin{itemize}
-		\item	Hàm lượng Oxy trong nước,
-		\item   Độ pH,
-		\item	Nhiệt độ,
-		\item	Nồng độ muối.
-		\end{itemize}
-	\item Ba thông số nội suy (tính toán từ các thông số đã đo được qua cảm biến):
- 		\begin{itemize}
-		\item	Nồng độ $NH_3$,
-		\item	Nồng độ $H_2S$,
-		\item	Nồng độ $NO_2$.
- 		\end{itemize}
- 	\end{itemize}
-\item Hiển thị tại chỗ các thông số đo được lên LCD,
-\item Cảnh báo cho người dùng khi các thông số vượt quá ngưỡng an toàn qua còi, đèn và qua SMS,
-\item Lưu cấu hình vào bộ nhớ Flash để có thể phục hồi cấu hình khi bị mất điện,
-\item Lưu lại nhật ký hệ thống vào thẻ nhớ (Có tùy chọn Bật/Tắt),
-\item Mã hóa rồi gửi dữ liệu về máy chủ thông qua mạng di động,
-\item Có khả năng điều chỉnh các thông số hệ thống từ xa qua máy chủ hoặc SMS (có mật khẩu),
-\item Chu kỳ lấy dữ liệu, gửi dữ liệu về máy chủ, chu kỳ lưu giữ vào thẻ nhớ,
-\item Cập nhật giá trị ngưỡng trên và dưới của thông số (Cho phép tự động cập nhật từ máy chủ),
-\item Truy vấn thông tin hệ thống gồm các thông số cấu hình và tình trạng hệ thống,
-\item Cập nhật và bảo trì hệ thống.
-\end{itemize}
-\par 
-Yêu cầu khoa học cần đạt:
-	\begin{itemize}
-	\item Module phần cứng hoạt động ổn định trong môi trường khắc nghiệt, dễ dàng mở rộng, nâng cấp khi cần,
-	\item Xử lý các dữ liệu từ cảm biến với tốc độ nhanh, tiêu tốn ít tài nguyên hệ thống nhất,
-	\item Đảm bảo các phép tính toán có sai số ít nhất,
-	\item Đảm bảo truyền thông tin cậy,
-	\item Kích thước nhỏ gọn, tiêu thụ năng lượng thấp.
-	\end{itemize}
-\begin{figure}[h]
-    \begin{center}
-     \includegraphics[scale=0.5]{image/hinh2_12}
-    \end{center}
-    \caption{Sơ đồ khối một thiết bị BKRES (client)}
-    \label{refhinh2_12}
-    \end{figure}
-\par 
-Máy chủ và thiết bị trao đổi dữ liệu qua việc trao đổi bản tin trên hạ tầng mạng GSM sử dụng giao thức TCP/IP nhằm đảm bảo dữ liệu truyền tải được chính xác và đầy đủ. Để máy chủ có thể nhận diện và giải mã dữ liệu được gửi đến thì phần dấu hiệu nhận diện bản tin và giá trị chỉ định kích thước bản tin cần được giữ nguyên không được mã hóa. Phần dữ liệu mã hóa chỉ bao gồm nội dung bản tin. Do đó, cấu trúc bản tin (Bảng 2.3) được xây dựng gồm có:
-\begin{itemize}
-\item HEADER: phần đầu bản tin và kích thước của toàn bộ bản tin,
-\item Phần nội dung bản tin (phần được mã hóa) bao gồm:
-  	\begin{itemize}
-  	\item	Thông tin về ClientID,
-  	\item	Loại bản tin (CommandID),
-  	\item	Thông tin về thời gian (Timestamp),
-  	\item 	Dữ liệu bản tin (Payload).
-	\end{itemize}   
-\item END: nhận diện kết thúc bản tin.
-\end{itemize}
-Nội dung bản tin xác thực gồm:
-\begin{itemize}
-\item Thông tin về phiên bản hệ thống,
-\item Mã CODE (một thành phần tạo khóa AES),
-\item Mã B (một thành phần tạo khóa AES),
-\item Checksum.
-\end{itemize}
-Nội dung bản tin dữ liệu gồm:
-\begin{itemize}
-\item Thông tin về dữ liệu cảm biến: pH, Oxy, Salt, Temp, NH3, H2S,
-\item Checksum.
-\end{itemize} 
-\begin{figure}[h]
-    \begin{center}
-     \includegraphics[scale=0.5]{image/hinh2_13}
-    \end{center}
-    \caption{Cấu trúc bản tin gửi dữ liệu trao đổi giữa máy chủ và client}
-    \label{refhinh2_13}
-\end{figure}
-\par 
-Hệ thống BKRES, sử dụng phương pháp truyền thông qua hệ thống GSM. Với việc sử dụng phương pháp này, mỗi thiết bị trong mạng cần phải có một module sim để truyền dữ liệu cho server, bên cạnh đó cần phải tốn chi phí hàng tháng để duy trì dịch vụ cho mỗi thiết bị. Phương pháp này có một số nhược điểm lớn là yêu cầu về cơ sở hạ tầng cao (cần có hệ thống GSM), khi hệ thống BKRES mở rộng (số lượng thiết bị lớn hơn) thì yêu cầu chi phí về việc duy trì hệ thống là lớn. Do đó, hệ thống BKRES hướng đến việc sử dụng công nghệ truyền thông LoRa để thu thập dữ liệu.
-\section{Một số công cụ hỗ trợ khác}
-\subsection{Phần mềm hỗ trợ cấu trình vi điều khiển}
-Để cấu hình chức năng phần cứng cho các dòng vi điều khiển, ST đưa ra bộ công cụ STM32CubeMX \cite{10}. Phần mềm này hỗ trợ cấu hình các chức năng cho một vi điều khiển, phục vụ cho một dự án mới một cách trực quan, nhanh chóng. Ngoài ra, STM32CubeMX tự động download các driver mới nhất của ST dành cho các dòng chip của mình. Vì vậy đảm bảo các API của hãng sẽ luôn được cập nhật. Công cụ này còn hỗ trợ tự động sinh project mới với tùy chọn các IDE thông dụng. Giao diện phần mềm và giao diện cấu hình cho từng ngoại vi được thể hiện trong Hình \ref{refhinh2_14} và Hình \ref{refhinh2_15}{}.\\
-\begin{figure}[h]
-    \begin{center}
-     \includegraphics[scale=0.24]{image/hinh2_14}
-    \end{center}
-    \caption{Giao diện phần mềm STM32CubeMX hỗ trợ cấu hình}
-    \label{refhinh2_14}
-   \begin{center}
-     \includegraphics[scale=0.48]{image/hinh2_15}
-    \end{center}
-    \caption{Giao diện cấu hình chi tiết cho từng ngoại vi của STM32CubeMX}
-    \label{refhinh2_15}
-\end{figure}
-\subsection{Phần mềm lập trình và biên dịch firmware Keil C}	
-Keil C $\mu$Vision (Hình \ref{refhinh2_16}{}) là công cụ chuyên dụng hỗ trợ lập trình nhúng rất nổi tiếng. Keil C hỗ trợ hầu hết các loại chip vi xử lý trên thị trường và hỗ trợ 2 loại ngôn ngữ C/C++, Assembly. Nó được coi là IDE (môi trường phát triển) khá toàn diện, bao gồm khả năng biên dịch với trình biên dịch thương mại được tối ưu hóa, hỗ trợ nạp code và gỡ lỗi chuyên nghiệp.
-\begin{figure}[h]
-    \centering
-     \includegraphics[scale=0.28]{image/hinh2_16}
-    \caption{Giao diện phần mềm lập trình firmware Keil C $\mu$Vision}
-    \label{refhinh2_16}
-\end{figure}
-\subsection{Phần mềm hỗ trợ giao tiếp UART Hercules} 
-Trong quá trình lập trình, ngoài tính năng debug do phần mềm lập trình Keil C hỗ trợ, em còn sử dụng phần mềm Hercules (Hình \ref{refhinh2_17}{}) để hỗ trợ cho công việc kiểm tra và sửa lỗi. Hercules là một phần mềm hỗ trợ giao tiếp UART giúp hiển thị thông báo từ vi điều khiển lên máy tính, sử dụng đơn giản và thân thiện với người dùng. Sau khi kit kết nối với máy tính qua cổng COM, ta chỉ cần chọn đúng cổng COM được kết nối, chọn baud rate trùng với baud rate được cài đặt ở vi điều khiển, thế là có thể xem được thông báo từ vi điều khiển.\\
-\begin{figure}[h]
-\centering
-\includegraphics[scale=0.5]{image/hinh2_17}
-\caption{Giao diện phần mềm HERCULES}
-\label{refhinh2_17}
-\end{figure}
-\section{Kết luận}	
-Từ những kiến thức em đã tìm hiểu và do những điểm phù hợp của ALOHA đối với hệ thống BKRES, em quyết định dựa trên giao thức ALOHA để xây dựng giao thức đa truy nhập và tích hợp giao thức đa truy nhập này vào thiết bị BKRES. Các bước tiến hành xây dựng giao thức sẽ được trình bày trong chương sau.
-
-
-
-
+	
+	\section{Kết luận}
+	Trong     CHƯƠNG \ref{chapter2} em đã tiến hành tìm hiểu, phân tích và tổng hợp những phần kiến thức liên quant trực tiếp vào đề tài đồ án. Bao gồm các đặc điểm, kỹ thuật được sử dụng để xây dựng kỹ thuật điều chế LoRa như: kỹ thuật trải phổ, trải phổ Chirp, các ưu điểm/nhược điểm mà kỹ thuật điều chế LoRa mang lại.\par
+Tiếp đến, em đã trình bày những điểm mấu chốt của chuẩn giao thức LoRaWAN do Alliance công bố. Bao gồm: kiến trúc tổng quan của hệ thống, chồng giao thức trong LoRaWAN. Các cấu trúc bản tin, các thủ tục – tiến trình và giao diện được tích hợp trong LoRaWAN. Ngoài ra, phần bảo mật – sinh khoá và một số quy định về việc sử dụng – tham gia khai thác mạng LoRaWAN cũng được đưa ra. \par
+Tất cả những kiến thức lý thuyết trên sẽ là nền tảng giúp em tiến hành thiết kế, xây dựng một mạng LoRaWAN hoàn chỉnh ứng dụng trong phần truyền thông trong hệ thống kiểm soát, phát hiện phóng xạ. Trong các chương tiếp theo, em sẽ tiếp tục trình bày về phần phân tích chức năng yêu cầu, phân tích – thiết kế kiến trúc, lựa chọn giải pháp công nghệ nhằm thực hiện mục tiêu đã đưa ra.
 

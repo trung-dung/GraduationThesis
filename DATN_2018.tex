@@ -15,17 +15,26 @@
 %\usepackage{caption}
 %\usepackage{subcaption}
 \usepackage[left=3.5 cm,right=2 cm,top=2.54 cm,bottom=2.54 cm]{geometry}
+
 %bia
+%\usepackage{sectsty}
+%\allsectionsfont{\mdseries\scshape}
+
+%\usepackage(titlesec)
+%\titleformat{\chapter}{\textsc}
+
 
 %het bia
 \setlength{\parskip}{0.5 em} % dan cach giua cac doan van
 %\input setbmp
 \usepackage[unicode]{hyperref} % tu dong tao bookmark
 \usepackage{tocloft,calc}
-\chapternumberfont{\changefontsizes{20pt}}
+\chapternumberfont{\changefontsizes{25pt}}
 \chaptertitlefont{\changefontsizes{30pt}}
-\renewcommand{\cftchappresnum}{Chương }
+\renewcommand{\cftchappresnum}{Chương}
 \AtBeginDocument{\addtolength\cftchapnumwidth{\widthof{\bfseries {Chương } }}}
+
+
 \renewcommand{\baselinestretch}{1.3} % dan dong
 \setlength{\parindent}{5 ex} % dieu chinh tab moi dau doan van
 %======================================
@@ -79,6 +88,39 @@ leftmargin=-5pt,rightmargin=-5pt,
 innerleftmargin=5pt,innerrightmargin=5pt]{mybox}
 \def\dotfill#1{\cleaders\hbox to #1{.}\hfill}
 \newcommand\dotline[2][.5em]{\leavevmode\hbox to #2{\dotfill{#1}\hfil}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{dedication}
+{
+   \cleardoublepage
+   \thispagestyle{empty}
+   \vspace*{\stretch{1}}
+   \hfill\begin{minipage}[t]{0.66\textwidth}
+   \raggedright
+}%
+{
+   \end{minipage}
+   \vspace*{\stretch{3}}
+   \clearpage
+}
+%%%%%%%%%%%%%%%%%%%% dedication 2
+\newcommand{\dedicationpage}{%
+  \clearpage
+  \thispagestyle{plain}% better empty
+  \vspace*{\fill}
+  \begin{center}
+  \usefont{\encodingdefault}{pzc}{m}{n}
+%  \input{frontmatter/dedication}
+  %% here I insert directly the code
+  Dedicated \\ to \\[10mm]
+  this is the first line \\
+  and this is the second line
+  %%
+  \end{center}
+  \vspace*{\fill}
+  \clearpage
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \title{ĐỒ ÁN TỐT NGHIỆP 2019}
@@ -91,19 +133,30 @@ innerleftmargin=5pt,innerrightmargin=5pt]{mybox}
 \subfile{nxGiangVien}
 \pagebreak
 \subfile{nxPhanBien}
-\pagebreak
-\changefontsizes{13 pt}
-\subfile{Loinoidau.tex}
 
 \pagebreak
-\changefontsizes{13 pt}
+\begin{dedication}
+\begin{large}
+\textit{To my love}
+\end{large}
+\end{dedication}
+
+%\dedicationpage
+
+\pagebreak
+{\pagestyle{plain}
+\subfile{Loinoidau.tex}
+\cleardoublepage}
+
+\pagebreak
 \subfile{Loicamon.tex}
 
-%\pagebreak
-%\subfile{Tomtatbaocao.tex}
 
 \pagebreak
+{\pagestyle{plain}
 \subfile{ABSTRACT.tex}
+\cleardoublepage}
+
 \pagebreak
 
 \renewcommand{\contentsname}{Mục lục}
@@ -138,13 +191,16 @@ innerleftmargin=5pt,innerrightmargin=5pt]{mybox}
 
 \input{chapter2.tex}
 
-%\input{chapter3.tex}
-\input{chapter3_new.tex}
+\input{chapter3.tex}
+
 
 \input{chapter4.tex}
 
 \input{Tongketdoan.tex}
+
 \input{Tailieuthamkhao.tex}
+
 \input{Phuluc.tex}
+
 \printbibliography
 \end{document}

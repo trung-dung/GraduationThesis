@@ -1,201 +1,87 @@
-\chapter{KIẾN TRÚC HỆ THỐNG}
+\chapter{\textsc{Kiến trúc hệ thống}}
 \label{chapter3}
 Từ những cơ sở lý thuyết thu thập ở chương 2, chương này em sẽ trình bày những bước giải quyết bài toán mà đề tài đưa ra.
-\section{Phân tích yêu cầu}
-Từ yêu cầu của đề tài và việc phân tích chi tiết yêu cầu và chức năng của hệ thống cần phải đáp ứng, em đã xác định được yêu cầu chức năng và phi chức năng của hệ thống như sau:
+\section{Mô hình kiến trúc tổng quan}
+		\begin{figure}[h!] % hinh 215
+			\centering
+			\includegraphics[width=\linewidth]{./img/31.pdf}
+			\caption{Mô hình kiến trúc hệ thống}
+			\label{fig:fig31}
+	\end{figure}
+Dựa trên các mô hình truyền thông dành cho mạng sử dụng công nghệ truyền thông cự ly lớn và công suất thấp. Cũng như tham chiếu cho mô hình kiến trúc truyền thông của chuẩn LoRaWAN Alliance, em đề xuất mô hình kiến trúc hệ thống truyền thông sử dụng LoRaWAN ứng dụng trong quan trắc các tham số môi trường, phóng xạ,.. như Hình \ref{fig:fig31}. Trong kiến trúc hệ thống đề xuất gồm các phân hệ như sau:
 \begin{itemize}
-\item	Yêu cầu chức năng:
-	\begin{itemize}
-	\item	Các nút truyền dữ liệu đến được Gateway,
-	\item	Mạng có linh động về số lượng nút,
-	\item	Số lượng nút trong mạng từ 3 nút trở lên.
-	\end{itemize}
-\item Yêu cầu phi chức năng:  
-	\begin{itemize}
-	\item 	Các nút truyền dữ liệu chính xác, ổn định,
-	\item 	Nút tiêu tốn ít năng lượng,
-	\item	Thiết bị hoạt động ổn định,
-	\item	Hình thức gọn, phù hợp điều kiện làm việc.
-	\item	Dữ liệu được đảm bảo an toàn,
-	\item	Chi phí hợp lý.
-	\end{itemize}
+\item	Phân hệ cảm biến: Phân hệ này bao gồm các thiết bị quan trắc, đo lường các tham số môi trường bằng các loại cảm biến chuyên dụng, chính xác. Các dữ liệu đo được từ cảm biến sẽ được gửi đến LoRaGateway bằng sóng LoRa RF,
+\item	Phân hệ LoRaBackend: Phân hệ đề xuất thiết kế triển khai theo LoRa Backend của chuẩn LoRaWAN bao gồm Join Server, Network server và Application Server,
+\item	Phân hệ ứng dụng, phân hệ này bao gồm các hệ quản trị dữ liệu lưu trữ dữ liệu đã nhận được, và triển khai các ứng dụng liên quan như website, ứng dụng mobile hoặc ứng dụng học máy (machine learning), học sâu (deep learning). (Không nằm trong phạm vi đồ án này),
+\item	Phân hệ vận hành, điều khiển: Phân hệ này có chức năng giám sát, điều khiển, cấu hình thiết bị từ xa. 
 \end{itemize}
-\section{Kiến trúc tổng thể hệ thống}
-Dựa trên cơ sở kiến trúc đã có sẵn của thiết bị BKRES, hệ thống sẽ được tích hợp thêm module truyền thông LoRa vào các thiết bị của hệ thống. Khi đó hệ thống gồm 4 phân hệ chính. Hình \ref{construction}{} mô tỏ rõ hơn kiến trúc hệ thống.
+
+\section{Phân hệ cảm biến (LoRa Nodes)}
+Phân hệ cảm biến là tập hợp các thiết bị node cảm biến có các chức năng như sau:
 \begin{itemize}
-	\item Phân hệ cảm biến và xử lý dữ liệu: Ở mỗi nút mạng được trang bị các bộ cảm biến ghi đo 4 tham số (hàm lượng Oxy, nhiệt độ, độ pH và nồng độ muối). Dữ liệu cảm biến được gửi đến bộ điều khiển trung tâm (sử dụng vi điều khiển STM32) để xử lý, phân tích, đóng gói và gửi đến module truyền thông LoRa.
-	\item Phân hệ truyền thông sử dụng LoRa: hoạt động theo mô hình đơn chặng, có nhiệm vụ gửi dữ liệu từ phân hệ cảm biến tới server trung tâm.
-	\item Phân hệ cung cấp dịch vụ: Sau khi nhận dữ liệu từ phân hệ truyền thông, phân hệ này có nhiệm vụ xử lý dữ liệu và cung cấp các dịch vụ cho phân hệ giám sát và người dùng.
-	\item Phân hệ giám sát và điều khiển: có nhiệm vụ hiển thị dữ liệu cảm biến một cách trực quan thông qua ứng dụng di động, ứng dụng web. Người dùng có thể cấu hình hệ thống, đặt các mức ngưỡng cảnh báo,… trên ứng dụng.
+\item	Tích hợp các module cảm biến đo đạc các tham số vật lý môi trường tuỳ thuộc vào các ứng dụng cụ thể như: đo đạc các nồng độ phóng xạ ứng dụng trong kiểm xạ hoặc giám sát, phát hiện nguồn phóng xạ. Các loại cảm biến đo các thông số môi trường nước ảnh hưởng đến nuôi trồng thuỷ hải sản như H2S, DO, độ mặn, pH,… nhằm ứng dụng trong các ứng dụng nông nghiêp thông minh. Đơn giản hơn để kiểm tra có thể các cảm biến đơn giản như cảm biến nhiệt độ, độ ẩm, cảm biến khí gas, khói bụi ứng dụng trong các toà nhà, văn phòng, …
+\item	Thiết bị nút cảm biến phải có chức năng hiệu chỉnh xử lý tín hiệu thu được từ các đầu vào cảm biến, xử lý đề đưa ra dữ liệu số trước khi truyền đi,
+\item	Chức năng tiếp theo là chức năng truyền thông, với mạch LoRa node đưa ra sẽ dựng module truyền thông LoRa của Semtech triển khai chuẩn LoRaWAN là công nghệ truyền thông chính. Với chức năng truyền thông này, dữ liệu được đảm bảo bảo mật, truyền thông chính xác, hiệu quả đường truyền, hiệu quả sử dụng phổ cao. Khoảng cách thiết kế cần đạt khi truyền thông bằng module LoRaWAN yêu cầu 7-10 km với tầm nhìn thẳng. 2-3 km trong phạm vi đô thị. Ngoài ra, em cũng đề xuất tích hợp thêm module GSM, module Sim, ưu điểm của module SIM là truyền thông được xa, có hạ tầng kỹ thuật của các nhà mạng hỗ trợ cao nên có thể truyền trực tiếp dữ liệu về server. Nhưng nhược điểm lớn nhất phải kể đến là tốn kém chi phí. Vì giá thành của một module SIM dao động từ 500.000 vnđ trở lên. Trong khi module LoRa chỉ từ 200.000 – 400.000 vnđ. Hơn nữa khi gắn module sim lên thiết bị, việc bảo trì, nạp cước, đăng ký gói dịch vụ mạng cũng phức tạp, gây phiền phức cho người bảo trì khi các số lượng các node truyền thông lớn và nằm giải rác với khoảng cách lớn. Hoặc các node được lắp đặt tại những nơi khó tiếp cận như gắn trên phao đặt trong một vịnh, đầm nuôi tôm,… 
+\item	Thiết bị node phải có chức năng cảnh báo, báo hiệu sự hoạt động của hệ thống bằng các đèn led hoặc hiển thị thông tin, trạng thái thiết bị ra ngoài màn hình LCD. 
+\item	Chức năng định vị được đưa ra nhằm xác định vị trí của thiết bị. Việc nắm được vị trí của thiết bị nhằm khiến cho nội dung dữ liệu mà thiết bị gửi lên ứng dụng có giá trị khi được gắn với một không gian và thời gian cụ thể. Ngoài ra, việc định vị còn giúp xác định được thiết bị khi bị thất lạc hoặc có bản đồ toàn cụ sự bố trí vị trí các mạng cảm biến, nhằm có những điều chỉnh hợp lý tuỳ vào các ứng dụng cụ thể. 
 \end{itemize}
-\begin{center}
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.15]{image/kientrucLoRa}
-\end{center}
-\caption{Kiến trúc hệ thống}
-\label{construction}
-\end{figure}
-\end{center}
-\par 
-Module LoRa SX1278 được lựa chọn để tích hợp vào thiết bị cảm biến như thể hiện trên hình \ref{moduleSX1278}{}. Nút cảm biến được thiết kế và chế tạo tài phòng nghiên cứu SANSLAB, gồm các thành phần phần cứng chính như: phân hệ cảm biến các tham số môi trường nước, phân hệ truyền thông, phân hệ vi xử lý và điều khiển, phân hệ cấp nguồn và phân hệ hiển thị, cảnh tại chỗ. Phần mềm trên nút cảm biến gồm firmware và drivers điều khiển hoạt động các phân hệ và ngoại vi, thuật toán đa truy nhập cũng được nhúng trong firmware của thiết bị. Một số thuật toán chính được biểu diễn qua các lưu đồ sau đây.
-\section{Thiết kế nút mạng cảm biến tích hợp~module SX1278}
-%\begin{center}
-\begin{figure}[h]
-	\begin{center}
-		\includegraphics[scale=0.45]{image/hinh3_1}
-	\end{center}
-	\caption{Nút cảm biến tích hợp chip LoRa SX1278}
-	\label{moduleSX1278}
-\end{figure}
-%\end{center}
-\section{Mô hình mạng hình sao}
-Thuật toán đa truy nhập đề xuất được phát triển và thử nghiệm trên mô hình gồm 3 nút cảm biến và một Gateway như hình \ref{protocol}{}. Để đánh giá khả năng truyền dữ liệu, độ ổn định, khả năng tùy biến và tự cấu hình của các nút trong mạng, em cấu hình các thông số cơ bản của các nút theo như bảng \ref{bang3_1}{}.
-\begin{table}[h]
-	\tabcolsep = 2cm
-    \centering
-    \caption{Bảng thông số cấu hình của các nút trong mạng}
-    \begin{tabular}{|c|c|}
-     	\hline
-     	Thông số & Giá trị  \\
-     	\hline
-     	Channel & 11 (433 MHz)\\
-     	\hline
-     	BW & 125 kHz\\
-     	\hline
-     	CR & 4/5\\
-     	\hline
-     	SF & 7\\
-     	\hline
-     	Header & ON\\
-     	\hline
-     	CRC & ON\\
-     	\hline
-    \end{tabular}
-    \label{bang3_1}
-\end{table}
-\par 
-Khi mô hình hoạt động bình thường (hình \ref{normal}{}), 3 nút sẽ gửi dữ liệu đến Gateway theo một chu kỳ định sẵn. Trong thí nghiệm để kiếm tra sự ổn định của mạng một số thông số khoảng các của các nút với Gateway sẽ được thay đổi.\\
-\begin{center}
-\begin{figure}[h]
-	\begin{center}
-		\includegraphics[scale=0.35]{image/normal}
-	\end{center}
-	\caption{Mô hình hoạt động của mạng}
-	\label{normal}
-\end{figure}
-\end{center}
-\par 
-Trong trường hợp mạng đang hoạt động bình thường, có một nút mới tham gia vào mạng, nút này sẽ gửi yêu cầu đến Gateway. Sau khi được Gateway chấp nhận thì nút sẽ gửi dữ liệu đến Gateway theo một chu kỳ như những nút khác.
-\section{Xây dựng lưu đồ thuật toán xử lý trên STM32}   
-Với mô hình truyền thông hình sao như đề xuất trên, module truyền thông SX1278 trên mỗi nút mạng trong hệ thống được điều khiển bởi vi xử lý STM32 thông qua giao tiếp UART. Một số thuật toán điều khiển hoạt động của nút được trình bày trong các phần sau đây. 
-\subsection{Gateway} 
- Trong quá trình truyền nhận dữ liệu, Gateway có các chức năng chính sau:
- \begin{itemize}
- \item	Gateway tự động cấu hình,
- \item	Nhận dữ liệu từ các nút,
- \item	Quản lý nút trong mạng.
- \end{itemize}
- \par 
-Sau khi đã cấu hình cho gateway, trong vòng lặp vô hạn, gateway liên tục mở kênh truyền để nhận bản tin. Nếu bản tin đó là do một nút mới gửi đến (nút chưa tham gia vào mạng) thì gateway sẽ tiến hành quá trình xác thực nút. Còn nếu bản tin là bản tin chứa dữ liệu, Gateway sẽ nhận và xử lý dữ liệu và tiếp tục quá trình mở kênh truyền để nhận dữ liệu. Thuật toán \ref{gateway} thể hiện thuật toán xử lý của Gateway.
-\begin{center}
-\begin{algorithm}[h]
-	\caption{Thuật toán của Gateway}
-	\label{gateway}
-	\begin{algorithmic}[1]
-		\State $pass \gets sanslab$
-		\State Gateway tự động cấu hình  \Comment{Gateway sẽ tự động cài một số thông số như ID, SF, CR, tần số,...}
-		\While{1}
-			\If{Nhận được gói tin}
-				\State $packet \gets packet\_receive$	\Comment{gói tin nhận được}
-				\If{$packet$ là gói tin gửi dữ liệu}
-					\State $data \gets packet.data$
-					\State Xử lý dữ liệu	\Comment{Gateway có thể gửi dữ liệu lên Server, hiển thị hoặc lưu dữ liệu}
-				\ElsIf{$packet$ là gói tin yêu cầu tham gia mạng}
-					\State	$ID \gets packet.src$	\Comment{Lấy ID của nút gửi đến}
-					\State	$authentication \gets packet.data$ \Comment{Lấy dữ liệu bản tin xác thực}
-					\State 	$response \gets true$
-					\If{$authentication \neq pass$ }
-						\State $response \gets flase$
-					\EndIf
-					\State gửi bản tin phản hồi response cho nút ID
-				\EndIf
-			\EndIf		
-		\EndWhile
-	\end{algorithmic}
-\end{algorithm}
-\end{center}
-\subsection{Nút} 
-Trong quá trình truyền nhận dữ liệu, nút có các chức năng chính sau:
+
+\section{Phân tích yêu cầu chức năng LoRa-Gateway}
+Với LoRa Gateway đề ra những chức năng cơ bản như sau (tuân theo chuẩn LoRaWAN):
 \begin{itemize}
-\item	Nút tự động cấu hình, mỗi nút có một ID khác nhau,
-\item	Khi nút chưa tham gia mạng, nút sẽ gửi yêu cầu để tham gia mạng. Khi đó xảy ra một số trường hợp sau:
-	\begin{itemize}
-	\item	Quá trình yêu cầu không thành công, nút sẽ gửi lại,
-	\item	Nếu bản tin xác thực sai, nút sẽ không hoạt động nữa,
-	\item	Nếu quá trình yêu cầu tham gia mạng thành công, nút sẽ gửi dữ liệu.
-	\end{itemize}
-\item	Sau khi tham gia mạng thành công, nút sẽ gửi dữ liệu theo chu kỳ.
+\item	LoRa Gateway có chức năng nhận dữ liệu (các bản tin dữ liệu hoặc điều khiển) được gửi từ LoRa Node thông qua phương thức điều chế LoRa. LoRa Gateway phải phục vụ được nhiều node. Theo nhà cung cấp module Semtech thì một LoRa Gateway có thể phục vụ được 10.000 nodes. Với đồ án đặt ra, em sẽ thử nghiệm với số lượng node tối đa mà làm được. Tối thiểu sẽ là 2 nodes. Cơ chế đa truy nhập sử dụng chung tài nguyên đường truyền vô tuyến LoRa giữa các LoRa Nodes và Gateway được triển khai cài đặt nhằm giảm thiểu sự va chạm và tăng hiệu suất đường truyền,
+\item	LoRa Gateway chuyển tiếp bản tin uplink về LoRa Backend và chuyển tiếp bản tin downlink xuống các LoRa Node. Kết nối giữa LoRa Gateway và LoRa Backend được phân tích, thiết kế, triển khai sẽ sử dụng chuẩn IEEE 802.3, IEEE 802.11 và sử dụng module SIM 3G (tuỳ chọn).
 \end{itemize}
-Sau khi được cấu hình, nút sẽ gửi bản tin xác thực cho Gateway (ID của Gateway được cấu hình sẵn trong nút). Nút sẽ thực hiện quá trình yêu cầu tham gia mạng (\ref{RequestJoinNetworks}) đến khi thành công (nếu bản tin xác thực sai, nút sẽ dừng lại). Sau khi nút nhận được bản tin chấp nhận tham gia vào mạng của Gateway, nút sẽ tiến hành quá trình gửi dữ liệu (quá trình này được thực hiên theo chu kỳ). Quá trình xử lý của nút được thể hiện \ref{node}{}.
-\begin{center}
-\begin{algorithm}[h]
-	\caption{Thuật toán của Nút}
-	\label{node}
-	\begin{algorithmic}[1]
-		\State {$msgAuthentication \gets sanslab$}
-		\State Nút tự động cấu hình  \Comment{Nút sẽ tự động cài một số thông số như ID, SF, CR, tần số,...}
-		
-		\State {$idGateway \gets$ Địa chỉ Gateway}		
-		\State {$response \gets 2 $} \Comment{response = 0 --> bản tin xác thực chính xác; response = 1 --> bản tin xác thực không chính xác; response = 2 --> nút chưa tham gia mạng}
-		
-		\State $RequestJoinNetworks(idGateway, msgAuthentication)$
-		
-		\While{1}
-			\If{$response == 0$}
-				\State $data \gets$ lấy dữ liệu từ cảm biến
-				\State $cnt = 0$
-				\Repeat
-					\State $state \gets sendPacket(idGateway, data)$ 
-					\If{$state > 0$} 
-						\State Delay()
-					\EndIf
-					\State $cnt \gets cnt + 1$
-				\Until{$state > 0$ and $cnt < threshold$} \Comment{threshold là số lần gửi tối đa}
-			\ElsIf{$response == 1$} 
-				\State $Sleep()$ 
-				\Else
-					\State $RequestJoinNetworks(idGateway, msgAuthentication)$
-				\EndIf
-			%\EndIf
-		\EndWhile
-	\end{algorithmic}
-\end{algorithm}
-\end{center}
-\par 
-Trong quá trình yêu cầu tham gia vào mạng, nút sẽ gửi bản tin xác thực đến khi nào nhận lại được bản tin phản hồi của Gateway. Khi đó nút sẽ biết đươc mình đã được chấp thuận tham gia mạng hay chưa. Còn về phần Gateway, sau khi nhận được bản tin xác thực được gửi từ nút, Gateway sẽ kiểm tra bản tin xác thực đó có chính xác không. Kết quả của quá trình kiểm tra bản tin xác thực sẽ được Gateway gửi lại cho nút
-\begin{algorithm}
-\caption{RequestJoinNetworks}
-\label{RequestJoinNetworks}
-\begin{algorithmic}[1]
-  \Procedure {RequestJoinNetworks}{$idGateway$, $msgAuthentication$}
-	\Repeat
-			\State $state \gets sendPacket(idGateway, msgAuthentication)$ 
-			\Comment{state là trạng thái của quá trình gửi tin; state = 0 gửi bản tin thành công; state > 0 gửi bản tin chưa thành công}
-			\If{$state > 0$} 
-				\State Delay()
-			\ElsIf{Nhận được bản tin hồi đáp từ Gateway}
-				\State $response \gets packet\_receive.data$
-				\If{$response$ không chính xác} 
-					\State $state \gets 1$
-				\EndIf
-			\EndIf
-	\Until{$state > 0$}
-  \EndProcedure
-\end{algorithmic}
-\end{algorithm}
+\section{Phân tích yêu cầu chức năng phân hệ LoRa Backend }
+	\begin{figure}[h!] % hinh 32
+			\centering
+			\includegraphics[width=\linewidth]{./img/32.pdf}
+			\caption{Mô hình tham chiếu LoRa Backend với các thiết bị LoRa Node tại mạng nhà mình (End Device At Home) [8]}
+			\label{fig:fig32}
+	\end{figure}
+Tham khảo dựa theo đặc tả trong chuẩn LoRaWAN cụ thể trong đặc tả LoRaWAN Backend Interface (giao diện backend của mạng LoRaWAN), Hình \ref{fig:fig32} minh hoạ sơ đồ tham chiếu các phần tử của LoRaWAN Backend. Em cũng đưa ra những chức năng cơ bản phân hệ backend dành cho LoRaWAN.
+
+\subsection{Network Server}
+Network server (máy chủ quản lý mạng): là điểm của của tầng LoRa MAC phục vụ các node kết nối với mạng. Nó là trung tâm của topology hình sao mà chuẩn LoRaWAN đề ra, NS gồm các chức năng sau đây:
+\begin{itemize}
+\item	Kiểm tra địa chỉ các LoRa Nodes,
+\item	Xác thực khung (Frame Authentication) và kiểm tra đếm khung,
+\item	Phản hồi ack,
+\item	Thực hiện chức năng đáp ứng data rate,
+\item	Đáp ứng, phản hồi tất cả các câu lệnh yêu cầu từ lora node,
+\item	Chuyển tiếp dữ liệu uplink đến đúng server ứng dụng cụ thể,
+\item	Vận chuyển, queuing bản tin downlink từ server ứng dụng xuống các lora node,
+\item	Vận chuyển bản tin Join-Request và Join-Accept giữa lora node và Join-server trong quá trình kích hoạt thiết bị từ xa (OTAA).
+\end{itemize}
+Có thể tách NS ra thành 3 phần tử gồm: (i) Serving Server (sNS); (ii) Home Server (hNS); và (iii) forwarding server (fNS). Mỗi phần tử có một chức năng cụ thể. Tuỳ vào, mô hình tham chiếu Device At Home hoặc Roaming mà 3 phần từ này được triển khai cùng một server hoặc khác các server vật lý. Chức năng cụ thể cùng từ phần tử như sau:
+\begin{itemize}
+\item	Serving Server: Điều khiển MAC Layer,
+\item	Home Server: Là nơi lưu trữ các thông tin như sau: thông tin thiết bị, thông tin về dịch vụ, thông tin định tuyến, và DevEUI của thiết bị. hNS kết nối trực tiếp với jNS nhằm phục vụ quá trình kích hoạt, đăng ký tham gia vào mạng của lora nodes. hNS cũng kết nối trực tiếp với AS nhằm vận chuyển các bản tin uplink và downlink giữa hai phần từ. 
+\item	Forwarding server: là phần tử quản lý kết nối với Radio Gateway, nó quản lý các bản tin uplink, downlink giữa GW và sNS.
+\end{itemize}
+
+\subsection{Join Server}
+JS quản lý quá trình OTAA, JS sẽ sử dụng các thông tin sau để thực hiện quá trình điều khiển:
+\begin{itemize}
+\item	DevEUI,
+\item	AppKey,
+\item	NwkKey (chỉ sử dụng với LoRaWAN v1.1 Device),
+\item	Bộ định danh Home Network Server,
+\item	Bộ định danh máy chủ ứng dụng,
+\item	Phiên bản LoRaWAN (1.0, 1.0.2, 1.0.3 hoặc 1.1) 
+\end{itemize}
+\subsection{Application Server }
+Server ứng dụng (Application Server) xử lý các payload của tầng ứng dụng, cung cấp các dịch vụ mức ứng dụng cho người dùng. Nó cùng sinh ra các bản tin downlink gửi xuống các thiết bị lora node.
+
+\section{Phân tích chức năng phân hệ ứng dụng người dùng}
+Phân hệ chức năng ứng dụng người dùng, khai thác các dữ liệu thu thập được từ các LoRa Nodes gửi lên xử lý và thao tác với chúng tuỳ từng ứng dụng cụ thể. (Phân hệ này không bao gồm trong đồ án này)
+
+\section{Phân tích chức năng phân hệ vận hành điều khiển}
+Những chức năng đặt ra ở phân hệ này gồm:
+\begin{itemize}
+\item	Có khả năng thực hiện vận hành, điều khiển, kiểm soát lỗi, kiểm tra tình trạng thiết bị bằng cách kết nối trực tiếp thiết bị lora node, gateway với các thiết bị điều khiển như PC, …
+\item	Có khả năng cấu hình, yêu cầu trạng thái và điều khiển một số tác vụ quan trọng từ xa bằng các phương pháp cấu hình qua tin nhắn hoặc qua các câu lệnh điều khiển qua Internet thông qua hệ thống. 
+\end{itemize}
+
 \section{Kết luận}
-Trong chương 3, em đã trình bày mô tả giao thức đa truy nhập mà em đã xây dựng để giải quyết đề tài. Sau quá trình xây dựng, triển khai và thí nghiệm, em xin trình bày kết quả đạt được trong chương sau.
-
-
-
+Trong chương này, dựa trên những kiến thức về cơ sở lý thuyết LoRa, LoRaWAN cũng như các phần kiến thức về thiết kế hệ thống truyền thông. Em đã đưa ra mô hình kiến trúc mạng truyền thông tổng quan sử dụng công nghệ truyền thông LoRa, áp dụng theo mô hình chuẩn LoRaWAN Alliance. Cụ thể hơn, em cũng nêu ra những chức năng chính của từng phân hệ - phần tử của hệ thống. Trong các chương tiếp theo em sẽ trình bày chi tiết các giải pháp kỹ thuật, thiết kế, lựa chọn linh kiện phần cứng, và đưa ra những lưu đồ thuật toán, cấu trúc firmware nhằm điều khiển, cài đặt tại từng phân hệ khác nhau.   
